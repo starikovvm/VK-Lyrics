@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		77B376D01A5C117D00BC964E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B376CF1A5C117D00BC964E /* main.m */; };
+		77B376D31A5C117D00BC964E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B376D21A5C117D00BC964E /* AppDelegate.m */; };
+		77B376D61A5C117D00BC964E /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B376D51A5C117D00BC964E /* FirstViewController.m */; };
+		77B376D91A5C117D00BC964E /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B376D81A5C117D00BC964E /* SecondViewController.m */; };
+		77B376DC1A5C117D00BC964E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77B376DA1A5C117D00BC964E /* Main.storyboard */; };
+		77B376DE1A5C117D00BC964E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77B376DD1A5C117D00BC964E /* Images.xcassets */; };
+		77B376E11A5C117D00BC964E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77B376DF1A5C117D00BC964E /* LaunchScreen.xib */; };
+		77B376ED1A5C117D00BC964E /* VK_simple_clientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B376EC1A5C117D00BC964E /* VK_simple_clientTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		77B376E71A5C117D00BC964E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77B376C21A5C117D00BC964E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 77B376C91A5C117D00BC964E;
+			remoteInfo = "VK simple client";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		77B376CA1A5C117D00BC964E /* VK simple client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VK simple client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77B376CE1A5C117D00BC964E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77B376CF1A5C117D00BC964E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		77B376D11A5C117D00BC964E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		77B376D21A5C117D00BC964E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		77B376D41A5C117D00BC964E /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		77B376D51A5C117D00BC964E /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		77B376D71A5C117D00BC964E /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		77B376D81A5C117D00BC964E /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		77B376DB1A5C117D00BC964E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		77B376DD1A5C117D00BC964E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		77B376E01A5C117D00BC964E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		77B376E61A5C117D00BC964E /* VK simple clientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VK simple clientTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77B376EB1A5C117D00BC964E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77B376EC1A5C117D00BC964E /* VK_simple_clientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VK_simple_clientTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		77B376C71A5C117D00BC964E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77B376E31A5C117D00BC964E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		77B376C11A5C117D00BC964E = {
+			isa = PBXGroup;
+			children = (
+				77B376CC1A5C117D00BC964E /* VK simple client */,
+				77B376E91A5C117D00BC964E /* VK simple clientTests */,
+				77B376CB1A5C117D00BC964E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		77B376CB1A5C117D00BC964E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				77B376CA1A5C117D00BC964E /* VK simple client.app */,
+				77B376E61A5C117D00BC964E /* VK simple clientTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		77B376CC1A5C117D00BC964E /* VK simple client */ = {
+			isa = PBXGroup;
+			children = (
+				77B376D11A5C117D00BC964E /* AppDelegate.h */,
+				77B376D21A5C117D00BC964E /* AppDelegate.m */,
+				77B376D41A5C117D00BC964E /* FirstViewController.h */,
+				77B376D51A5C117D00BC964E /* FirstViewController.m */,
+				77B376D71A5C117D00BC964E /* SecondViewController.h */,
+				77B376D81A5C117D00BC964E /* SecondViewController.m */,
+				77B376DA1A5C117D00BC964E /* Main.storyboard */,
+				77B376DD1A5C117D00BC964E /* Images.xcassets */,
+				77B376DF1A5C117D00BC964E /* LaunchScreen.xib */,
+				77B376CD1A5C117D00BC964E /* Supporting Files */,
+			);
+			path = "VK simple client";
+			sourceTree = "<group>";
+		};
+		77B376CD1A5C117D00BC964E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				77B376CE1A5C117D00BC964E /* Info.plist */,
+				77B376CF1A5C117D00BC964E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		77B376E91A5C117D00BC964E /* VK simple clientTests */ = {
+			isa = PBXGroup;
+			children = (
+				77B376EC1A5C117D00BC964E /* VK_simple_clientTests.m */,
+				77B376EA1A5C117D00BC964E /* Supporting Files */,
+			);
+			path = "VK simple clientTests";
+			sourceTree = "<group>";
+		};
+		77B376EA1A5C117D00BC964E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				77B376EB1A5C117D00BC964E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		77B376C91A5C117D00BC964E /* VK simple client */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77B376F01A5C117D00BC964E /* Build configuration list for PBXNativeTarget "VK simple client" */;
+			buildPhases = (
+				77B376C61A5C117D00BC964E /* Sources */,
+				77B376C71A5C117D00BC964E /* Frameworks */,
+				77B376C81A5C117D00BC964E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "VK simple client";
+			productName = "VK simple client";
+			productReference = 77B376CA1A5C117D00BC964E /* VK simple client.app */;
+			productType = "com.apple.product-type.application";
+		};
+		77B376E51A5C117D00BC964E /* VK simple clientTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77B376F31A5C117D00BC964E /* Build configuration list for PBXNativeTarget "VK simple clientTests" */;
+			buildPhases = (
+				77B376E21A5C117D00BC964E /* Sources */,
+				77B376E31A5C117D00BC964E /* Frameworks */,
+				77B376E41A5C117D00BC964E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				77B376E81A5C117D00BC964E /* PBXTargetDependency */,
+			);
+			name = "VK simple clientTests";
+			productName = "VK simple clientTests";
+			productReference = 77B376E61A5C117D00BC964E /* VK simple clientTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		77B376C21A5C117D00BC964E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Viktor Starikov";
+				TargetAttributes = {
+					77B376C91A5C117D00BC964E = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					77B376E51A5C117D00BC964E = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 77B376C91A5C117D00BC964E;
+					};
+				};
+			};
+			buildConfigurationList = 77B376C51A5C117D00BC964E /* Build configuration list for PBXProject "VK simple client" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 77B376C11A5C117D00BC964E;
+			productRefGroup = 77B376CB1A5C117D00BC964E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				77B376C91A5C117D00BC964E /* VK simple client */,
+				77B376E51A5C117D00BC964E /* VK simple clientTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		77B376C81A5C117D00BC964E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77B376DC1A5C117D00BC964E /* Main.storyboard in Resources */,
+				77B376E11A5C117D00BC964E /* LaunchScreen.xib in Resources */,
+				77B376DE1A5C117D00BC964E /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77B376E41A5C117D00BC964E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		77B376C61A5C117D00BC964E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77B376D91A5C117D00BC964E /* SecondViewController.m in Sources */,
+				77B376D31A5C117D00BC964E /* AppDelegate.m in Sources */,
+				77B376D61A5C117D00BC964E /* FirstViewController.m in Sources */,
+				77B376D01A5C117D00BC964E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77B376E21A5C117D00BC964E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77B376ED1A5C117D00BC964E /* VK_simple_clientTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		77B376E81A5C117D00BC964E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 77B376C91A5C117D00BC964E /* VK simple client */;
+			targetProxy = 77B376E71A5C117D00BC964E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		77B376DA1A5C117D00BC964E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77B376DB1A5C117D00BC964E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		77B376DF1A5C117D00BC964E /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77B376E01A5C117D00BC964E /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		77B376EE1A5C117D00BC964E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		77B376EF1A5C117D00BC964E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		77B376F11A5C117D00BC964E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "VK simple client/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		77B376F21A5C117D00BC964E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "VK simple client/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		77B376F41A5C117D00BC964E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "VK simple clientTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VK simple client.app/VK simple client";
+			};
+			name = Debug;
+		};
+		77B376F51A5C117D00BC964E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "VK simple clientTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VK simple client.app/VK simple client";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		77B376C51A5C117D00BC964E /* Build configuration list for PBXProject "VK simple client" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77B376EE1A5C117D00BC964E /* Debug */,
+				77B376EF1A5C117D00BC964E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		77B376F01A5C117D00BC964E /* Build configuration list for PBXNativeTarget "VK simple client" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77B376F11A5C117D00BC964E /* Debug */,
+				77B376F21A5C117D00BC964E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		77B376F31A5C117D00BC964E /* Build configuration list for PBXNativeTarget "VK simple clientTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77B376F41A5C117D00BC964E /* Debug */,
+				77B376F51A5C117D00BC964E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 77B376C21A5C117D00BC964E /* Project object */;
+}
