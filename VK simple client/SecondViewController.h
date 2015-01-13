@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface SecondViewController : UIViewController
+@interface SecondViewController : UITableViewController
 
+@property (strong,nonatomic) NSMutableArray *musicArray;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong,nonatomic) AVPlayer *player;
+@property (strong, nonatomic) AVPlayerItem *playerItem;
+@property (nonatomic) float isLoading;
+@property (nonatomic) int page;
 
 @end
 
