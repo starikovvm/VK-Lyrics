@@ -22,7 +22,7 @@ static BOOL isPlaying;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.seekSlider setThumbImage:[UIImage imageNamed:@"thumb25.png"] forState:UIControlStateNormal];
-    
+    [AFSoundManager sharedManager].delegate = self;
     self.nameLabel.textColor = [UIColor blackColor];
     self.nameLabel.font = [UIFont fontWithName:@"Helvetica" size:18.0f];
     self.nameLabel.labelSpacing = 40; // distance between start and end labels
@@ -38,11 +38,11 @@ static BOOL isPlaying;
         [self changeToPlay];   // This changes the button to Play
     }
     
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0
-                                                  target:self
-                                                selector:@selector(updateTime:)
-                                                userInfo:nil
-                                                 repeats:YES];
+//    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0
+//                                                  target:self
+//                                                selector:@selector(updateTime:)
+//                                                userInfo:nil
+//                                                 repeats:YES];
     self.scrubbing = NO;
 
 }
@@ -102,8 +102,23 @@ static BOOL isPlaying;
     [[AFSoundManager sharedManager] startStreamingRemoteAudioFromURL:[[Playlist sharedInstance] currentSong].URLString andBlock:^(int percentage, CGFloat elapsedTime, CGFloat timeRemaining, NSError *error, BOOL finished) {
         if (!error) {
             
-        } else {
+            NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+            [formatter setDateFormat:@"mm:ss"];
             
+            NSDate *elapsedTimeDate = [NSDate dateWithTimeIntervalSince1970:elapsedTime];
+            self.timeLabel.text = [formatter stringFromDate:elapsedTimeDate];
+            
+            if (percentage < 0){
+                self.timeEndLabel.text = @"00:00";
+            } else
+            {
+                NSDate *timeRemainingDate = [NSDate dateWithTimeIntervalSince1970:timeRemaining];
+                self.timeEndLabel.text = [formatter stringFromDate:timeRemainingDate];
+            }
+            if (!self.scrubbing) {
+                self.seekSlider.value = percentage * 0.01;
+            }
+        } else {
             NSLog(@"There has been an error playing the remote file: %@", [error description]);
         }
     }];
@@ -130,7 +145,6 @@ static BOOL isPlaying;
 
 -(void)currentPlayingStatusChanged:(AFSoundManagerStatus)status
 {
-    NSLog(@"status changed!");
     switch (status) {
         case AFSoundManagerStatusPlaying:
             [self changeToPause];
@@ -197,7 +211,8 @@ static BOOL isPlaying;
     NSTimeInterval timeRemaining = [[infoForCurrentPlaying objectForKey:@"time remaining"] doubleValue];
     NSTimeInterval duration = [[infoForCurrentPlaying objectForKey:@"duration"] doubleValue];
 
-    
+    NSLog(@"%@",infoForCurrentPlaying);
+    NSLog(@"%f %f %f",elapsedTime,timeRemaining, duration);
     int percentage = (int)((elapsedTime * 100)/duration);
     
     NSDate *elapsedTimeDate = [NSDate dateWithTimeIntervalSince1970:elapsedTime];
@@ -227,11 +242,11 @@ static BOOL isPlaying;
         [[AFSoundManager sharedManager] pause];
 
     }
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0
-                                                target:self
-                                                selector:@selector(updateTime:)
-                                                userInfo:nil
-                                                repeats:YES];
+//    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0
+//                                                target:self
+//                                                selector:@selector(updateTime:)
+//                                                userInfo:nil
+//                                                repeats:YES];
     
 //    NSUInteger duration = CMTimeGetSeconds([VKAudioPlayer sharedInstance].player.currentItem.asset.duration);
 //    unsigned long minutes = floor(duration/60);
