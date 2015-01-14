@@ -32,22 +32,16 @@ static UILabel *notLoadingLabel;
     }
     self.page = 0;
     self.isLoading = NO;
+
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(reloadMusic) forControlEvents:UIControlEventValueChanged];
     
-    notLoadingLabel = [[UILabel alloc] initWithFrame:self.view.frame];
-    [notLoadingLabel setTextAlignment:NSTextAlignmentCenter];
-    [notLoadingLabel setText:@"Произошла ошибка загрузки"];
+    self.navigationItem.leftBarButtonItem.title = @"Выйти";
     
     self.edgesForExtendedLayout = UIRectEdgeAll;
     self.tableView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, CGRectGetHeight(self.tabBarController.tabBar.frame), 0.0f);
     
-    [[[VKApi users] get] executeWithResultBlock:^(VKResponse *response) {
-        currentUserId = [[response.json objectAtIndex:0] objectForKey:@"id"];
-        [self loadMusicForPage:self.page];
-    } errorBlock:^(NSError *error) {
-        
-    }];
-    
-
+    [self loadMusicForPage:self.page];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,26 +61,57 @@ static UILabel *notLoadingLabel;
 
 -(void)loadMusicForPage:(int)page
 {
-    if (!self.isLoading) {
-        
+    if (!currentUserId) {
+        [[[VKApi users] get] executeWithResultBlock:^(VKResponse *response) {
+            currentUserId = [[response.json objectAtIndex:0] objectForKey:@"id"];
+            [self loadMusicWithUserID:currentUserId forPage:page];
+        } errorBlock:^(NSError *error) {
+            NSLog(@"An error occured: %@",error.description);
+            [self.tableView reloadData];
+        }];
+    }
+    if (!self.isLoading && currentUserId) {
+        [self loadMusicWithUserID:currentUserId forPage:page];
+    }
+}
+
+-(void)loadMusicWithUserID:(NSString*)userID forPage:(int)page
+{
+    if (!self.isLoading && currentUserId) {
+        self.isLoading = YES;
         NSNumber* offset = [NSNumber numberWithInt:(page*LOADED_COUNT)];
         
-        VKRequest * audioReq = [VKApi requestWithMethod:@"audio.get" andParameters:@{VK_API_USER_ID : currentUserId, VK_API_COUNT : @(LOADED_COUNT),VK_API_OFFSET : offset} andHttpMethod:@"GET"];
+        VKRequest * audioReq = [VKApi requestWithMethod:@"audio.get" andParameters:@{VK_API_USER_ID : userID, VK_API_COUNT : @(LOADED_COUNT),VK_API_OFFSET : offset} andHttpMethod:@"GET"];
         [audioReq executeWithResultBlock:^(VKResponse *response)
-        {
-            audioTotalCount = [[response.json objectForKey:VK_API_COUNT] intValue];
-            pagesTotalCount = ceilf((float)audioTotalCount/LOADED_COUNT); //количество страниц
-            for (NSDictionary* songDict in [response.json objectForKey:@"items"])
-            {
-                Song* song = [[Song alloc] initWithJSON:songDict];
-                [self.musicArray addObject:song];
-                [notLoadingLabel removeFromSuperview];
-            }
-            [self.tableView reloadData];
-        } errorBlock:^(NSError *error) {
-            NSLog(@"ERROR! %@",error.description);
-            [self.view addSubview:notLoadingLabel];
-        }];
+         {
+             audioTotalCount = [[response.json objectForKey:VK_API_COUNT] intValue];
+             pagesTotalCount = ceilf((float)audioTotalCount/LOADED_COUNT); //количество страниц
+             for (NSDictionary* songDict in [response.json objectForKey:@"items"])
+             {
+                 Song* song = [[Song alloc] initWithJSON:songDict];
+                 [self.musicArray addObject:song];
+                 [notLoadingLabel removeFromSuperview];
+             }
+             self.isLoading = NO;
+             [self.tableView reloadData];
+         } errorBlock:^(NSError *error) {
+             NSLog(@"ERROR! %@",error.description);
+             [self.tableView reloadData];
+             self.isLoading = NO;
+             
+         }];
+    }
+
+}
+
+-(void)reloadMusic
+{
+    NSMutableArray *emptyArray = [[NSMutableArray alloc] init];
+    self.musicArray = emptyArray;
+    self.page = 0;
+    [self loadMusicForPage:self.page];
+    if (self.refreshControl) {
+        [self.refreshControl endRefreshing];
     }
 }
 
@@ -94,6 +119,19 @@ static UILabel *notLoadingLabel;
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    if (self.musicArray.count == 0) {
+        notLoadingLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,self.view.bounds.size.width,self.view.bounds.size.height)];
+        notLoadingLabel.numberOfLines = 0;
+        notLoadingLabel.textColor = [UIColor blackColor];
+        notLoadingLabel.font = [UIFont fontWithName:@"Helvetica-Italic" size:16.0];
+        [notLoadingLabel setTextAlignment:NSTextAlignmentCenter];
+        [notLoadingLabel setText:@"Произошла ошибка загрузки.\n Потяните вниз, чтобы обновить."];
+        [notLoadingLabel sizeToFit];
+        self.tableView.backgroundView = notLoadingLabel;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        return 0;
+    }
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     return 1;
 }
 
@@ -107,6 +145,14 @@ static UILabel *notLoadingLabel;
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.row > self.musicArray.count) {
+        SongCell *cell;
+        cell = [tableView dequeueReusableCellWithIdentifier:@"songCell" forIndexPath:indexPath];
+        cell.title.text = @"";
+        cell.subtitle.text = @"";
+        cell.length.text = @"";
+        return cell;
+    } else
     if (indexPath.row == self.musicArray.count)
     {
         UITableViewCell *cell;
@@ -126,17 +172,7 @@ static UILabel *notLoadingLabel;
     return nil;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return UITableViewAutomaticDimension;
-}
 
-//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    if (indexPath.row == self.musicArray.count) {
-//        return 44;
-//    }
-//    return 53;
-//}
 
 #pragma mark - TableView
 
@@ -154,6 +190,10 @@ static UILabel *notLoadingLabel;
         [Playlist sharedInstance].array = self.musicArray;
         [self performSegueWithIdentifier:@"musicListToPlayerSegue" sender:indexPath];
     }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewAutomaticDimension;
 }
 
 

@@ -116,10 +116,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SKM-ub-VdP" userLabel="Controls View">
-                                <rect key="frame" x="6" y="521" width="588" height="59"/>
+                                <rect key="frame" x="6" y="520" width="588" height="70"/>
                                 <subviews>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="64h-1T-oic">
-                                        <rect key="frame" x="48" y="0.0" width="482" height="31"/>
+                                        <rect key="frame" x="39" y="2" width="500" height="31"/>
                                         <color key="minimumTrackTintColor" red="0.94117647059999998" green="0.38431372549999998" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="setCurrentTime:" destination="zeT-D6-ARa" eventType="touchUpInside" id="Qfo-zN-hUq"/>
@@ -127,23 +127,23 @@
                                         </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99:59" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pre-Jr-zpT">
-                                        <rect key="frame" x="536" y="4" width="52" height="21"/>
+                                        <rect key="frame" x="548" y="4" width="40" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="bec-TD-ybG"/>
-                                            <constraint firstAttribute="width" constant="52" id="tdM-4Y-6Zk"/>
+                                            <constraint firstAttribute="width" constant="40" id="tdM-4Y-6Zk"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vN5-9R-GdK" customClass="MPVolumeView">
-                                        <rect key="frame" x="-4" y="33" width="588" height="26"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vN5-9R-GdK">
+                                        <rect key="frame" x="-4" y="34" width="588" height="36"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBO-7z-mq2">
-                                        <rect key="frame" x="0.0" y="4" width="52" height="21"/>
+                                        <rect key="frame" x="0.0" y="4" width="40" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="52" id="Rk2-Sz-Yz8"/>
+                                            <constraint firstAttribute="width" constant="40" id="Rk2-Sz-Yz8"/>
                                             <constraint firstAttribute="height" constant="21" id="rzo-Ds-ixl"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -154,21 +154,21 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="pre-Jr-zpT" firstAttribute="top" secondItem="SKM-ub-VdP" secondAttribute="top" constant="4" id="2PW-87-WY9"/>
-                                    <constraint firstItem="vN5-9R-GdK" firstAttribute="top" secondItem="64h-1T-oic" secondAttribute="bottom" constant="3" id="3y4-fx-vjX"/>
-                                    <constraint firstAttribute="height" constant="59" id="BSN-jZ-bCi"/>
+                                    <constraint firstItem="vN5-9R-GdK" firstAttribute="top" secondItem="64h-1T-oic" secondAttribute="bottom" constant="2" id="3y4-fx-vjX"/>
+                                    <constraint firstAttribute="height" constant="70" id="BSN-jZ-bCi"/>
                                     <constraint firstAttribute="centerX" secondItem="vN5-9R-GdK" secondAttribute="centerX" constant="4" id="TpP-kc-XK1"/>
-                                    <constraint firstItem="64h-1T-oic" firstAttribute="width" secondItem="SKM-ub-VdP" secondAttribute="width" constant="-110" id="Yi6-60-QSX"/>
+                                    <constraint firstItem="64h-1T-oic" firstAttribute="width" secondItem="SKM-ub-VdP" secondAttribute="width" constant="-92" id="Yi6-60-QSX"/>
                                     <constraint firstAttribute="centerX" secondItem="64h-1T-oic" secondAttribute="centerX" constant="5" id="f3Z-xJ-yVr"/>
                                     <constraint firstItem="BBO-7z-mq2" firstAttribute="leading" secondItem="SKM-ub-VdP" secondAttribute="leading" id="ipq-rS-RRI"/>
                                     <constraint firstAttribute="trailing" secondItem="pre-Jr-zpT" secondAttribute="trailing" id="mog-XW-rG6"/>
                                     <constraint firstItem="BBO-7z-mq2" firstAttribute="top" secondItem="SKM-ub-VdP" secondAttribute="top" constant="4" id="rDY-Vr-sxd"/>
                                     <constraint firstAttribute="bottom" secondItem="vN5-9R-GdK" secondAttribute="bottom" id="uSA-v4-Ws4"/>
-                                    <constraint firstAttribute="bottom" secondItem="64h-1T-oic" secondAttribute="bottom" constant="29" id="xUX-mU-gTm"/>
+                                    <constraint firstAttribute="top" secondItem="64h-1T-oic" secondAttribute="top" constant="-2" id="xUX-mU-gTm"/>
                                     <constraint firstAttribute="width" secondItem="vN5-9R-GdK" secondAttribute="width" id="zi6-u2-pRx"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9Y-ia-7d4" userLabel="Buttons View">
-                                <rect key="frame" x="0.0" y="454" width="600" height="59"/>
+                                <rect key="frame" x="0.0" y="453" width="600" height="59"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yrI-1H-aMw">
                                         <rect key="frame" x="258" y="15" width="85" height="30"/>
@@ -251,7 +251,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTI-re-o4n" userLabel="LyricsView">
-                                <rect key="frame" x="0.0" y="118" width="600" height="336"/>
+                                <rect key="frame" x="0.0" y="118" width="600" height="335"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -264,7 +264,7 @@
                             <constraint firstAttribute="centerX" secondItem="gTI-re-o4n" secondAttribute="centerX" id="CHe-5A-J5l"/>
                             <constraint firstItem="SKM-ub-VdP" firstAttribute="top" secondItem="X9Y-ia-7d4" secondAttribute="bottom" constant="8" id="Dis-Te-0As"/>
                             <constraint firstAttribute="centerX" secondItem="SKM-ub-VdP" secondAttribute="centerX" id="KGp-0C-du3"/>
-                            <constraint firstItem="gaA-9a-9a6" firstAttribute="top" secondItem="SKM-ub-VdP" secondAttribute="bottom" constant="20" id="Sol-Rx-8eE"/>
+                            <constraint firstItem="gaA-9a-9a6" firstAttribute="top" secondItem="SKM-ub-VdP" secondAttribute="bottom" constant="10" id="Sol-Rx-8eE"/>
                             <constraint firstItem="gTI-re-o4n" firstAttribute="width" secondItem="gWe-sG-JDh" secondAttribute="width" id="bCo-ev-0G3"/>
                             <constraint firstItem="gTI-re-o4n" firstAttribute="top" secondItem="5Iw-tG-o04" secondAttribute="bottom" id="pDg-Gc-0tD"/>
                             <constraint firstAttribute="centerX" secondItem="X9Y-ia-7d4" secondAttribute="centerX" id="pma-aA-0ln"/>
@@ -280,6 +280,7 @@
                         <outlet property="seekSlider" destination="64h-1T-oic" id="XyP-gn-aZi"/>
                         <outlet property="timeEndLabel" destination="pre-Jr-zpT" id="XnA-hg-dAa"/>
                         <outlet property="timeLabel" destination="BBO-7z-mq2" id="Gb3-Nw-cGi"/>
+                        <outlet property="volumeView" destination="vN5-9R-GdK" id="Zcv-Z7-cPq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="98U-yr-Iul" userLabel="First Responder" sceneMemberID="firstResponder"/>

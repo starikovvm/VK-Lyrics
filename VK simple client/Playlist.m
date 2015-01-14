@@ -31,11 +31,13 @@
     return cSong;
 }
 
-- (void)changeCurrentTrackTo:(int)trackNumber
+- (BOOL)changeCurrentTrackTo:(int)trackNumber
 {
     if (trackNumber > 0 && trackNumber < self.array.count) {
         self.currentTrackNumber = trackNumber;
+        return YES;
     }
+    return NO;
 }
 
 @end

@@ -24,6 +24,7 @@
 		77B59AE91A6485B7000FA0E8 /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B59AE81A6485B7000FA0E8 /* Playlist.m */; };
 		77C9AF891A6570B500DF1FCE /* SongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C9AF881A6570B500DF1FCE /* SongCell.m */; };
 		77C9AF8C1A657CC300DF1FCE /* thumb25.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C9AF8B1A657CC300DF1FCE /* thumb25.png */; };
+		77E7033F1A66C64900E7FF04 /* PlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E7033E1A66C64900E7FF04 /* PlayController.m */; };
 		B92B27308E685EC2D9F21AFD /* libPods-VK simple client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE1A0C6F6DBB0F2702BC870 /* libPods-VK simple client.a */; };
 		BD6ED9CADD31FB5B21355E76 /* libPods-VK simple clientTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8BAA474C03AFA540EDF871 /* libPods-VK simple clientTests.a */; };
 		F09FAB0A6CD9980FA2B48953 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
@@ -75,6 +76,8 @@
 		77C9AF871A6570B500DF1FCE /* SongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongCell.h; sourceTree = "<group>"; };
 		77C9AF881A6570B500DF1FCE /* SongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongCell.m; sourceTree = "<group>"; };
 		77C9AF8B1A657CC300DF1FCE /* thumb25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb25.png; sourceTree = "<group>"; };
+		77E7033D1A66C64900E7FF04 /* PlayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayController.h; sourceTree = "<group>"; };
+		77E7033E1A66C64900E7FF04 /* PlayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayController.m; sourceTree = "<group>"; };
 		DD23E136273EC6945DAF305B /* Pods-VK simple clientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VK simple clientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VK simple clientTests/Pods-VK simple clientTests.release.xcconfig"; sourceTree = "<group>"; };
 		E43122B1CBBF95451584820F /* Pods-VK simple client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VK simple client.release.xcconfig"; path = "Pods/Target Support Files/Pods-VK simple client/Pods-VK simple client.release.xcconfig"; sourceTree = "<group>"; };
 		FAE1A0C6F6DBB0F2702BC870 /* libPods-VK simple client.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VK simple client.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +135,8 @@
 				77B336EF1A6001FF0047BA8C /* MyMusicTableViewController.m */,
 				77B377061A5D2DA600BC964E /* PlayerViewController.h */,
 				77B377071A5D2DA600BC964E /* PlayerViewController.m */,
+				77E7033D1A66C64900E7FF04 /* PlayController.h */,
+				77E7033E1A66C64900E7FF04 /* PlayController.m */,
 				776680351A634C9200DE073B /* VKLoginViewController.h */,
 				776680361A634C9200DE073B /* VKLoginViewController.m */,
 			);
@@ -404,6 +409,7 @@
 			files = (
 				777DB4881A65EA3A00E40FF6 /* AFSoundManager+getPlayerInfo.m in Sources */,
 				77B336F01A6001FF0047BA8C /* MyMusicTableViewController.m in Sources */,
+				77E7033F1A66C64900E7FF04 /* PlayController.m in Sources */,
 				77B376F81A5C148300BC964E /* User.m in Sources */,
 				776680371A634C9200DE073B /* VKLoginViewController.m in Sources */,
 				77C9AF891A6570B500DF1FCE /* SongCell.m in Sources */,

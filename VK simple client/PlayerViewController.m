@@ -8,7 +8,8 @@
 
 #import "PlayerViewController.h"
 #import "Playlist.h"
-#import "AFSoundManager+getPlayerInfo.h"
+//#import "AFSoundManager+getPlayerInfo.h"
+#import "PlayController.h"
 
 @interface PlayerViewController ()
 
@@ -22,7 +23,6 @@ static BOOL isPlaying;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.seekSlider setThumbImage:[UIImage imageNamed:@"thumb25.png"] forState:UIControlStateNormal];
-    [AFSoundManager sharedManager].delegate = self;
     self.nameLabel.textColor = [UIColor blackColor];
     self.nameLabel.font = [UIFont fontWithName:@"Helvetica" size:18.0f];
     self.nameLabel.labelSpacing = 40; // distance between start and end labels
@@ -30,12 +30,11 @@ static BOOL isPlaying;
     self.nameLabel.scrollSpeed = 30; // pixels per second
     self.nameLabel.textAlignment = NSTextAlignmentCenter; // centers text when no auto-scrolling is applied
     self.nameLabel.fadeLength = 12.f; // length of the left and right edge fade, 0 to disable
+    [self.nameLabel observeApplicationNotifications];
     
-    if ([AFSoundManager sharedManager].player.rate == 1.0) {
-        [self changeToPause];
-    } else {
-        [self changeToPlay];
-    }
+    MPVolumeView* volumeBar = [[MPVolumeView alloc] initWithFrame:self.volumeView.bounds];
+    [volumeBar sizeToFit];
+    [self.volumeView addSubview:volumeBar];
     
     [self updateLabels];
     
@@ -50,8 +49,9 @@ static BOOL isPlaying;
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    [[Playlist sharedInstance] addObserver:self forKeyPath:@"currentTrackNumber" options:NSKeyValueObservingOptionNew context:nil];
     [super viewDidAppear:animated];
+    [[Playlist sharedInstance] addObserver:self forKeyPath:@"currentTrackNumber" options:NSKeyValueObservingOptionNew context:nil];
+    
     [self becomeFirstResponder];
 }
 
@@ -73,37 +73,35 @@ static BOOL isPlaying;
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if ([keyPath isEqualToString:@"currentTrackNumber"]) {
-        [self playCurrentTrack];
+        [[PlayController sharedInstance] playCurrentTrack];
         [self updateLabels];
     }
 }
 
 -(void)addToPlaylist:(NSArray *)array
 {
-    [[Playlist sharedInstance].array addObjectsFromArray:array];
+    [[PlayController sharedInstance] addToPlaylist:array];
 }
 
 -(void)addToPlaylist:(NSArray*)array andPlayTrack:(int)trackNumber
 {
-    [Playlist sharedInstance].array = [array mutableCopy];
-    [self playTrack:trackNumber];
+    [[PlayController sharedInstance] addToPlaylist:array andPlayTrack:trackNumber];
 }
 
--(void)playCurrentTrack
-{
-    [[AFSoundManager sharedManager] startStreamingRemoteAudioFromURL:[[Playlist sharedInstance] currentSong].URLString andBlock:^(int percentage, CGFloat elapsedTime, CGFloat timeRemaining, NSError *error, BOOL finished) {
-        if (!error) {
-            
-        } else {
-            NSLog(@"There has been an error playing the remote file: %@", [error description]);
-        }
-    }];
-}
+//-(void)playCurrentTrack
+//{
+//    [[AFSoundManager sharedManager] startStreamingRemoteAudioFromURL:[[Playlist sharedInstance] currentSong].URLString andBlock:^(int percentage, CGFloat elapsedTime, CGFloat timeRemaining, NSError *error, BOOL finished) {
+//        if (!error) {
+//            
+//        } else {
+//            NSLog(@"There has been an error playing the remote file: %@", [error description]);
+//        }
+//    }];
+//}
 
 -(void)playTrack:(int)number
 {
-    [Playlist sharedInstance].currentTrackNumber = number;
-    [self playCurrentTrack];
+    [[PlayController sharedInstance] playTrack:number];
     [self updateLabels];
 }
 
@@ -118,25 +116,6 @@ static BOOL isPlaying;
 
 }
 
--(void)currentPlayingStatusChanged:(AFSoundManagerStatus)status
-{
-    switch (status) {
-        case AFSoundManagerStatusPlaying:
-            [self changeToPause];
-            break;
-        
-        case AFSoundManagerStatusPaused:
-            [self changeToPlay];
-            break;
-        
-        case AFSoundManagerStatusFinished:
-
-            break;
-            
-        default:
-            break;
-    }
-}
 
 
 #pragma mark - UI
@@ -173,7 +152,8 @@ static BOOL isPlaying;
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
     [formatter setDateFormat:@"mm:ss"];
-    NSDictionary* infoForCurrentPlaying = [[AFSoundManager sharedManager] gpi_getPlayerInfo];
+//    NSDictionary* infoForCurrentPlaying = [[AFSoundManager sharedManager] gpi_getPlayerInfo];
+    NSDictionary* infoForCurrentPlaying = [PlayController sharedInstance].currentPlayingInfo;
     NSTimeInterval elapsedTime = [[infoForCurrentPlaying objectForKey:@"elapsed time"] doubleValue];
     NSTimeInterval timeRemaining = [[infoForCurrentPlaying objectForKey:@"remaining time"] doubleValue];
     NSTimeInterval duration = [[infoForCurrentPlaying objectForKey:@"duration"] doubleValue];
@@ -195,8 +175,10 @@ static BOOL isPlaying;
     if (!self.scrubbing) {
      		   self.seekSlider.value = percentage * 0.001;
     }
-    if (percentage == 1000) {
-        [self playNextTrack];
+    if ([[PlayController sharedInstance] isPlaying]) {
+        [self changeToPause];
+    } else {
+        [self changeToPlay];
     }
 }
 
@@ -206,26 +188,19 @@ static BOOL isPlaying;
 
 
 - (IBAction)playButtonPressed:(UIButton *)sender {
-    if ([AFSoundManager sharedManager].status != AFSoundManagerStatusPlaying) {
-        [[AFSoundManager sharedManager] resume];
-    }
-    else
-    {
-        [[AFSoundManager sharedManager] pause];
-
-    }
+    [[PlayController sharedInstance] togglePlayPause];
     [self updateTime:nil];
     
 }
 
 - (IBAction)nextButtonPressed:(UIButton *)sender
 {
-    [self playNextTrack];
+    [[PlayController sharedInstance] playNextTrack];
 }
 
 - (IBAction)previousButtonPressed:(UIButton *)sender
 {
-    [self playPreviousTrack];
+    [[PlayController sharedInstance] playPreviousTrack];
 }
 
 - (IBAction)userIsScrubbing:(id)sender {
@@ -234,7 +209,6 @@ static BOOL isPlaying;
 
 - (IBAction)setCurrentTime:(id)scrubber {
     [[AFSoundManager sharedManager]moveToSection:self.seekSlider.value];
-
     self.scrubbing = FALSE;
 }
 

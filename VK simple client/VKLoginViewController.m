@@ -7,6 +7,7 @@
 //
 
 #import "VKLoginViewController.h"
+#import "PlayController.h"
 
 @interface VKLoginViewController ()
 

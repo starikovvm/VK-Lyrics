@@ -13,7 +13,7 @@
 
 + (Playlist *)sharedInstance;
 - (Song *)currentSong;
-- (void)changeCurrentTrackTo:(int)trackNumber;
+- (BOOL)changeCurrentTrackTo:(int)trackNumber;
 
 @property (strong, nonatomic) NSMutableArray* array;
 @property (nonatomic) int currentTrackNumber;
