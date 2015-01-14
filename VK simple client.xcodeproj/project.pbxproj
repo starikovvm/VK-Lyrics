@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		776680371A634C9200DE073B /* VKLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 776680361A634C9200DE073B /* VKLoginViewController.m */; };
-		777DB4851A65C82700E40FF6 /* AFSoundManager+Percentage.m in Sources */ = {isa = PBXBuildFile; fileRef = 777DB4841A65C82700E40FF6 /* AFSoundManager+Percentage.m */; };
+		777DB4881A65EA3A00E40FF6 /* AFSoundManager+getPlayerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 777DB4871A65EA3A00E40FF6 /* AFSoundManager+getPlayerInfo.m */; };
 		7780100D1A6019AB00125940 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7780100B1A6019AB00125940 /* Main.storyboard */; };
 		778010251A61F91E00125940 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 778010241A61F91E00125940 /* Song.m */; };
 		7780102B1A62B10F00125940 /* VKMusicAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7780102A1A62B10F00125940 /* VKMusicAPI.m */; };
@@ -22,7 +22,6 @@
 		77B377021A5C887200BC964E /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 77B377011A5C887200BC964E /* placeholder.png */; };
 		77B377081A5D2DA600BC964E /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B377071A5D2DA600BC964E /* PlayerViewController.m */; };
 		77B59AE91A6485B7000FA0E8 /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B59AE81A6485B7000FA0E8 /* Playlist.m */; };
-		77C9AF861A65568E00DF1FCE /* VKAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C9AF851A65568E00DF1FCE /* VKAudioPlayer.m */; };
 		77C9AF891A6570B500DF1FCE /* SongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C9AF881A6570B500DF1FCE /* SongCell.m */; };
 		77C9AF8C1A657CC300DF1FCE /* thumb25.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C9AF8B1A657CC300DF1FCE /* thumb25.png */; };
 		B92B27308E685EC2D9F21AFD /* libPods-VK simple client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE1A0C6F6DBB0F2702BC870 /* libPods-VK simple client.a */; };
@@ -47,8 +46,8 @@
 		776680341A63434C00DE073B /* AppPrefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppPrefix.pch; sourceTree = "<group>"; };
 		776680351A634C9200DE073B /* VKLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKLoginViewController.h; sourceTree = "<group>"; };
 		776680361A634C9200DE073B /* VKLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKLoginViewController.m; sourceTree = "<group>"; };
-		777DB4831A65C82700E40FF6 /* AFSoundManager+Percentage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFSoundManager+Percentage.h"; sourceTree = "<group>"; };
-		777DB4841A65C82700E40FF6 /* AFSoundManager+Percentage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFSoundManager+Percentage.m"; sourceTree = "<group>"; };
+		777DB4861A65EA3A00E40FF6 /* AFSoundManager+getPlayerInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFSoundManager+getPlayerInfo.h"; sourceTree = "<group>"; };
+		777DB4871A65EA3A00E40FF6 /* AFSoundManager+getPlayerInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFSoundManager+getPlayerInfo.m"; sourceTree = "<group>"; };
 		7780100C1A6019AB00125940 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		778010231A61F91D00125940 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
 		778010241A61F91E00125940 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
@@ -73,8 +72,6 @@
 		77B377071A5D2DA600BC964E /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		77B59AE71A6485B7000FA0E8 /* Playlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Playlist.h; sourceTree = "<group>"; };
 		77B59AE81A6485B7000FA0E8 /* Playlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Playlist.m; sourceTree = "<group>"; };
-		77C9AF841A65568E00DF1FCE /* VKAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKAudioPlayer.h; sourceTree = "<group>"; };
-		77C9AF851A65568E00DF1FCE /* VKAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKAudioPlayer.m; sourceTree = "<group>"; };
 		77C9AF871A6570B500DF1FCE /* SongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongCell.h; sourceTree = "<group>"; };
 		77C9AF881A6570B500DF1FCE /* SongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongCell.m; sourceTree = "<group>"; };
 		77C9AF8B1A657CC300DF1FCE /* thumb25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb25.png; sourceTree = "<group>"; };
@@ -118,10 +115,6 @@
 		778010261A61FA3900125940 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				777DB4831A65C82700E40FF6 /* AFSoundManager+Percentage.h */,
-				777DB4841A65C82700E40FF6 /* AFSoundManager+Percentage.m */,
-				77C9AF841A65568E00DF1FCE /* VKAudioPlayer.h */,
-				77C9AF851A65568E00DF1FCE /* VKAudioPlayer.m */,
 				77B59AE71A6485B7000FA0E8 /* Playlist.h */,
 				77B59AE81A6485B7000FA0E8 /* Playlist.m */,
 				778010231A61F91D00125940 /* Song.h */,
@@ -179,6 +172,8 @@
 			children = (
 				77B376D11A5C117D00BC964E /* AppDelegate.h */,
 				77B376D21A5C117D00BC964E /* AppDelegate.m */,
+				777DB4861A65EA3A00E40FF6 /* AFSoundManager+getPlayerInfo.h */,
+				777DB4871A65EA3A00E40FF6 /* AFSoundManager+getPlayerInfo.m */,
 				7780102F1A62B13500125940 /* API */,
 				778010261A61FA3900125940 /* Model */,
 				778010281A61FA4E00125940 /* Controller */,
@@ -407,9 +402,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				777DB4881A65EA3A00E40FF6 /* AFSoundManager+getPlayerInfo.m in Sources */,
 				77B336F01A6001FF0047BA8C /* MyMusicTableViewController.m in Sources */,
 				77B376F81A5C148300BC964E /* User.m in Sources */,
-				77C9AF861A65568E00DF1FCE /* VKAudioPlayer.m in Sources */,
 				776680371A634C9200DE073B /* VKLoginViewController.m in Sources */,
 				77C9AF891A6570B500DF1FCE /* SongCell.m in Sources */,
 				7780102B1A62B10F00125940 /* VKMusicAPI.m in Sources */,
@@ -417,7 +412,6 @@
 				77B59AE91A6485B7000FA0E8 /* Playlist.m in Sources */,
 				77B377081A5D2DA600BC964E /* PlayerViewController.m in Sources */,
 				778010251A61F91E00125940 /* Song.m in Sources */,
-				777DB4851A65C82700E40FF6 /* AFSoundManager+Percentage.m in Sources */,
 				77B376D01A5C117D00BC964E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

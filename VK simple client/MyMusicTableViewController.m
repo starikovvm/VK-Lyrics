@@ -42,7 +42,6 @@ static UILabel *notLoadingLabel;
     
     [[[VKApi users] get] executeWithResultBlock:^(VKResponse *response) {
         currentUserId = [[response.json objectAtIndex:0] objectForKey:@"id"];
-        NSLog(@"Current user ID is: %@",currentUserId);
         [self loadMusicForPage:self.page];
     } errorBlock:^(NSError *error) {
         
@@ -69,7 +68,6 @@ static UILabel *notLoadingLabel;
 -(void)loadMusicForPage:(int)page
 {
     if (!self.isLoading) {
-        NSLog(@"Loading page %i",page);
         
         NSNumber* offset = [NSNumber numberWithInt:(page*LOADED_COUNT)];
         
@@ -146,7 +144,6 @@ static UILabel *notLoadingLabel;
 {
     if ([[[tableView cellForRowAtIndexPath:indexPath] reuseIdentifier] isEqual:@"refresh"])
     { //Загрузить еще...
-        NSLog(@"page %i of %i",self.page,pagesTotalCount);
         if (self.page+1 < pagesTotalCount)
         {
             self.page++;
