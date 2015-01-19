@@ -31,14 +31,22 @@ static BOOL isPlaying;
     self.nameLabel.textAlignment = NSTextAlignmentCenter; // centers text when no auto-scrolling is applied
     self.nameLabel.fadeLength = 12.f; // length of the left and right edge fade, 0 to disable
     [self.nameLabel observeApplicationNotifications];
-    
-    MPVolumeView* volumeBar = [[MPVolumeView alloc] initWithFrame:self.volumeView.bounds];
-    [volumeBar sizeToFit];
-    [self.volumeView addSubview:volumeBar];
+    [self.seekSlider setMinimumTrackImage:[UIImage imageNamed:@"minTrackImage.png"] forState:UIControlStateNormal];
+    [self.seekSlider setMaximumTrackImage:[UIImage imageNamed:@"maxTrackImage.png"] forState:UIControlStateNormal];
+//    MPVolumeView* volumeBar = [[MPVolumeView alloc] initWithFrame:CGRectMake(self.volumeView.bounds.origin.x, self.volumeView.bounds.origin.y, self.volumeView.bounds.size.width, self.volumeView.bounds.size.height)];
+    MPVolumeView* volumeBar = [[MPVolumeView alloc] initWithFrame:CGRectMake(45, self.view.bounds.size.height-34, self.view.bounds.size.width-90, 30)];
+    [volumeBar setShowsVolumeSlider:YES];
+    [volumeBar setShowsRouteButton:YES];
+    [volumeBar setBackgroundColor:[UIColor clearColor]];
+    [volumeBar setVolumeThumbImage:[UIImage imageNamed:@"thumbVolumeBar.png"] forState:UIControlStateNormal];
+    [volumeBar setMinimumVolumeSliderImage:[UIImage imageNamed:@"minTrackImageVolume.png"] forState:UIControlStateNormal];
+    [volumeBar setMaximumVolumeSliderImage:[UIImage imageNamed:@"maxTrackImageVolume.png"] forState:UIControlStateNormal];
+//    [volumeBar sizeToFit];
+    [self.view addSubview:volumeBar];
     
     [self updateLabels];
     
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.5
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.2
                                                 target:self
                                                 selector:@selector(updateTime:)
                                                 userInfo:nil
@@ -51,8 +59,7 @@ static BOOL isPlaying;
 {
     [super viewDidAppear:animated];
     [[Playlist sharedInstance] addObserver:self forKeyPath:@"currentTrackNumber" options:NSKeyValueObservingOptionNew context:nil];
-    
-    [self becomeFirstResponder];
+//    [self becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,16 +71,19 @@ static BOOL isPlaying;
 {
     [super viewWillDisappear:animated];
     [[Playlist sharedInstance] removeObserver:self forKeyPath:@"currentTrackNumber"];
-    [self resignFirstResponder];
+//    [self resignFirstResponder];
 }
 
+-(void)dealloc
+{
+    [[Playlist sharedInstance] removeObserver:self forKeyPath:@"currentTrackNumber"];
+}
 
 #pragma mark - helpers
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if ([keyPath isEqualToString:@"currentTrackNumber"]) {
-        [[PlayController sharedInstance] playCurrentTrack];
         [self updateLabels];
     }
 }
@@ -87,35 +97,6 @@ static BOOL isPlaying;
 {
     [[PlayController sharedInstance] addToPlaylist:array andPlayTrack:trackNumber];
 }
-
-//-(void)playCurrentTrack
-//{
-//    [[AFSoundManager sharedManager] startStreamingRemoteAudioFromURL:[[Playlist sharedInstance] currentSong].URLString andBlock:^(int percentage, CGFloat elapsedTime, CGFloat timeRemaining, NSError *error, BOOL finished) {
-//        if (!error) {
-//            
-//        } else {
-//            NSLog(@"There has been an error playing the remote file: %@", [error description]);
-//        }
-//    }];
-//}
-
--(void)playTrack:(int)number
-{
-    [[PlayController sharedInstance] playTrack:number];
-    [self updateLabels];
-}
-
--(void)playNextTrack
-{
-    [[Playlist sharedInstance] changeCurrentTrackTo:[Playlist sharedInstance].currentTrackNumber+1];
-}
-
--(void)playPreviousTrack
-{
-    [[Playlist sharedInstance] changeCurrentTrackTo:[Playlist sharedInstance].currentTrackNumber-1];
-
-}
-
 
 
 #pragma mark - UI
@@ -139,10 +120,11 @@ static BOOL isPlaying;
 -(void)updateLabels
 {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.nameLabel setText:[[Playlist sharedInstance] currentSong].title refreshLabels:YES];
-        [self.artistLabel setText:[[Playlist sharedInstance] currentSong].artist];
-        int duration = [[Playlist sharedInstance] currentSong].duration;
-        self.timeEndLabel.text = [NSString stringWithFormat:@"%i:%02i",duration/60,duration%60];
+        Song* currentSong = [[Playlist sharedInstance] currentSong];
+        [self.nameLabel setText:currentSong.title refreshLabels:YES];
+        [self.artistLabel setText:currentSong.artist];
+//        int duration = [[Playlist sharedInstance] currentSong].duration;
+//        self.timeEndLabel.text = [NSString stringWithFormat:@"-%i:%02i",duration/60,duration%60];
     });
 }
 
@@ -158,6 +140,14 @@ static BOOL isPlaying;
     NSTimeInterval timeRemaining = [[infoForCurrentPlaying objectForKey:@"remaining time"] doubleValue];
     NSTimeInterval duration = [[infoForCurrentPlaying objectForKey:@"duration"] doubleValue];
     
+    Song* currentSong = [[Playlist sharedInstance] currentSong];
+    
+    NSDictionary* nowPlayingDictionary = @{MPMediaItemPropertyTitle:currentSong.title,
+                                           MPMediaItemPropertyArtist:currentSong.artist,
+                                           MPMediaItemPropertyPlaybackDuration:[NSNumber numberWithDouble:duration],
+                                           MPNowPlayingInfoPropertyElapsedPlaybackTime:[NSNumber numberWithDouble:elapsedTime]};
+    [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:nowPlayingDictionary];
+    
     int percentage = (int)((elapsedTime * 1000)/duration);
     
     NSDate *elapsedTimeDate = [NSDate dateWithTimeIntervalSince1970:elapsedTime];
@@ -166,11 +156,11 @@ static BOOL isPlaying;
     NSDate *timeRemainingDate = [NSDate dateWithTimeIntervalSince1970:timeRemaining];
     if (timeRemaining < 0) //не прогрузилось
     {
-        self.timeEndLabel.text = @"00:00";
+        self.timeEndLabel.text = @"-00:00";
     }
     else
     {
-        self.timeEndLabel.text = [formatter stringFromDate:timeRemainingDate];
+        self.timeEndLabel.text = [NSString stringWithFormat:@"-%@",[formatter stringFromDate:timeRemainingDate]];
     }
     if (!self.scrubbing) {
      		   self.seekSlider.value = percentage * 0.001;

@@ -22,6 +22,8 @@
 -(void)playNextTrack;
 -(void)playPreviousTrack;
 -(void)togglePlayPause;
+-(void)play;
+-(void)pause;
 -(void)addToPlaylist:(NSArray *)array;
 -(void)addToPlaylist:(NSArray*)array andPlayTrack:(int)trackNumber;
 -(BOOL)isPlaying;

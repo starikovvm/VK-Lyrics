@@ -33,7 +33,7 @@
 
 - (BOOL)changeCurrentTrackTo:(int)trackNumber
 {
-    if (trackNumber > 0 && trackNumber < self.array.count) {
+    if (trackNumber >= 0 && trackNumber < self.array.count) {
         self.currentTrackNumber = trackNumber;
         return YES;
     }

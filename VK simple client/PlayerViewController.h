@@ -30,7 +30,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *timeEndLabel;
 @property (strong, nonatomic) IBOutlet UIView *lyricsView;
 @property (strong, nonatomic) IBOutlet UIButton *playButton;
-@property (strong, nonatomic) IBOutlet UIView *volumeView;
 
 @property (nonatomic) int currentTrackNumber;
 @property (strong, nonatomic) Song* currentSong;

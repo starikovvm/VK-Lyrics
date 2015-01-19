@@ -22,6 +22,15 @@
 		77B377021A5C887200BC964E /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 77B377011A5C887200BC964E /* placeholder.png */; };
 		77B377081A5D2DA600BC964E /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B377071A5D2DA600BC964E /* PlayerViewController.m */; };
 		77B59AE91A6485B7000FA0E8 /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B59AE81A6485B7000FA0E8 /* Playlist.m */; };
+		77BFB7991A6874710000E0BD /* minTrackImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFB7971A6874710000E0BD /* minTrackImage.png */; };
+		77BFB79A1A6874710000E0BD /* maxTrackImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFB7981A6874710000E0BD /* maxTrackImage.png */; };
+		77BFB79C1A68775C0000E0BD /* thumbVolumeBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFB79B1A68775C0000E0BD /* thumbVolumeBar.png */; };
+		77BFB79E1A6878190000E0BD /* minTrackImageVolume.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFB79D1A6878190000E0BD /* minTrackImageVolume.png */; };
+		77BFB7A01A6878800000E0BD /* maxTrackImageVolume.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFB79F1A6878800000E0BD /* maxTrackImageVolume.png */; };
+		77BFB7A71A687CD70000E0BD /* volumeMax.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFB7A51A687CD70000E0BD /* volumeMax.png */; };
+		77BFB7A81A687CD70000E0BD /* volumeMin.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFB7A61A687CD70000E0BD /* volumeMin.png */; };
+		77BFB7AB1A687D780000E0BD /* volumeMax@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFB7A91A687D780000E0BD /* volumeMax@2x.png */; };
+		77BFB7AC1A687D780000E0BD /* volumeMin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFB7AA1A687D780000E0BD /* volumeMin@2x.png */; };
 		77C9AF891A6570B500DF1FCE /* SongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C9AF881A6570B500DF1FCE /* SongCell.m */; };
 		77C9AF8C1A657CC300DF1FCE /* thumb25.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C9AF8B1A657CC300DF1FCE /* thumb25.png */; };
 		77E7033F1A66C64900E7FF04 /* PlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E7033E1A66C64900E7FF04 /* PlayController.m */; };
@@ -73,6 +82,15 @@
 		77B377071A5D2DA600BC964E /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		77B59AE71A6485B7000FA0E8 /* Playlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Playlist.h; sourceTree = "<group>"; };
 		77B59AE81A6485B7000FA0E8 /* Playlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Playlist.m; sourceTree = "<group>"; };
+		77BFB7971A6874710000E0BD /* minTrackImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minTrackImage.png; sourceTree = "<group>"; };
+		77BFB7981A6874710000E0BD /* maxTrackImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maxTrackImage.png; sourceTree = "<group>"; };
+		77BFB79B1A68775C0000E0BD /* thumbVolumeBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbVolumeBar.png; sourceTree = "<group>"; };
+		77BFB79D1A6878190000E0BD /* minTrackImageVolume.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minTrackImageVolume.png; sourceTree = "<group>"; };
+		77BFB79F1A6878800000E0BD /* maxTrackImageVolume.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maxTrackImageVolume.png; sourceTree = "<group>"; };
+		77BFB7A51A687CD70000E0BD /* volumeMax.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volumeMax.png; sourceTree = "<group>"; };
+		77BFB7A61A687CD70000E0BD /* volumeMin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volumeMin.png; sourceTree = "<group>"; };
+		77BFB7A91A687D780000E0BD /* volumeMax@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volumeMax@2x.png"; sourceTree = "<group>"; };
+		77BFB7AA1A687D780000E0BD /* volumeMin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volumeMin@2x.png"; sourceTree = "<group>"; };
 		77C9AF871A6570B500DF1FCE /* SongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongCell.h; sourceTree = "<group>"; };
 		77C9AF881A6570B500DF1FCE /* SongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongCell.m; sourceTree = "<group>"; };
 		77C9AF8B1A657CC300DF1FCE /* thumb25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb25.png; sourceTree = "<group>"; };
@@ -194,6 +212,15 @@
 		77B376CD1A5C117D00BC964E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				77BFB79B1A68775C0000E0BD /* thumbVolumeBar.png */,
+				77BFB79D1A6878190000E0BD /* minTrackImageVolume.png */,
+				77BFB79F1A6878800000E0BD /* maxTrackImageVolume.png */,
+				77BFB7A51A687CD70000E0BD /* volumeMax.png */,
+				77BFB7A61A687CD70000E0BD /* volumeMin.png */,
+				77BFB7A91A687D780000E0BD /* volumeMax@2x.png */,
+				77BFB7AA1A687D780000E0BD /* volumeMin@2x.png */,
+				77BFB7971A6874710000E0BD /* minTrackImage.png */,
+				77BFB7981A6874710000E0BD /* maxTrackImage.png */,
 				77B377011A5C887200BC964E /* placeholder.png */,
 				77C9AF8B1A657CC300DF1FCE /* thumb25.png */,
 				77B376CE1A5C117D00BC964E /* Info.plist */,
@@ -250,6 +277,7 @@
 				77B376C71A5C117D00BC964E /* Frameworks */,
 				77B376C81A5C117D00BC964E /* Resources */,
 				7E510125E3A4A4C120A83208 /* Copy Pods Resources */,
+				50524F424C454D533F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -322,11 +350,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77BFB7991A6874710000E0BD /* minTrackImage.png in Resources */,
 				77B377021A5C887200BC964E /* placeholder.png in Resources */,
+				77BFB7A01A6878800000E0BD /* maxTrackImageVolume.png in Resources */,
+				77BFB7AC1A687D780000E0BD /* volumeMin@2x.png in Resources */,
+				77BFB79C1A68775C0000E0BD /* thumbVolumeBar.png in Resources */,
 				77B376E11A5C117D00BC964E /* LaunchScreen.xib in Resources */,
 				77C9AF8C1A657CC300DF1FCE /* thumb25.png in Resources */,
+				77BFB7A71A687CD70000E0BD /* volumeMax.png in Resources */,
 				77B376DE1A5C117D00BC964E /* images.xcassets in Resources */,
+				77BFB7A81A687CD70000E0BD /* volumeMin.png in Resources */,
+				77BFB79E1A6878190000E0BD /* minTrackImageVolume.png in Resources */,
+				77BFB7AB1A687D780000E0BD /* volumeMax@2x.png in Resources */,
 				7780100D1A6019AB00125940 /* Main.storyboard in Resources */,
+				77BFB79A1A6874710000E0BD /* maxTrackImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +377,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		50524F424C454D533F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export CODESIGN_ALLOCATE=/Library/JailCoder/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ]; then\n/Library/JailCoder/Entitlements/Entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi";
+		};
 		6E982E75D50CAC6019001848 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -477,7 +527,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -518,7 +568,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -541,6 +591,7 @@
 			baseConfigurationReference = 5084D58E8F86C7C45CC0433F /* Pods-VK simple client.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				EXECUTABLE_PREFIX = "";
 				INFOPLIST_FILE = "VK simple client/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -554,6 +605,7 @@
 			baseConfigurationReference = E43122B1CBBF95451584820F /* Pods-VK simple client.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				EXECUTABLE_PREFIX = "";
 				INFOPLIST_FILE = "VK simple client/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

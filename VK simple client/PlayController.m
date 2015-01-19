@@ -105,4 +105,14 @@
     return NO;
 }
 
+-(void)play
+{
+    [[AFSoundManager sharedManager] resume];
+}
+-(void)pause
+{
+    [[AFSoundManager sharedManager] pause];
+}
+
+
 @end

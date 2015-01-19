@@ -27,12 +27,12 @@ static UILabel *notLoadingLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"VK_TOKEN"]) {
-        [self performSegueWithIdentifier:@"toLoginSegue" sender:self];
-    }
+    
     self.page = 0;
     self.isLoading = NO;
-
+    
+//    [self becomeFirstResponder];
+    
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(reloadMusic) forControlEvents:UIControlEventValueChanged];
     
@@ -42,6 +42,12 @@ static UILabel *notLoadingLabel;
     self.tableView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, CGRectGetHeight(self.tabBarController.tabBar.frame), 0.0f);
     
     [self loadMusicForPage:self.page];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {

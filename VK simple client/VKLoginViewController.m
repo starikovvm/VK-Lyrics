@@ -76,4 +76,7 @@ static NSArray* SCOPE = nil;
 - (IBAction)logIn:(UIButton *)sender {
     [VKSdk authorize:SCOPE];
 }
+
+
+
 @end

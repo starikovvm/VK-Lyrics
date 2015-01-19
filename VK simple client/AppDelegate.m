@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "PlayController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 
@@ -19,15 +20,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-    
-    NSError *setCategoryError = nil;
-    BOOL success = [audioSession setCategory:AVAudioSessionCategoryPlayback error:&setCategoryError];
-    if (!success) { /* handle the error condition */ }
-    
-    NSError *activationError = nil;
-    success = [audioSession setActive:YES error:&activationError];
-    if (!success) { /* handle the error condition */ }
+//    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+//    
+//    NSError *setCategoryError = nil;
+//    BOOL success = [audioSession setCategory:AVAudioSessionCategoryPlayback error:&setCategoryError];
+//    if (!success) { /* handle the error condition */ }
+//    
+//    NSError *activationError = nil;
+//    success = [audioSession setActive:YES error:&activationError];
+//    if (!success) { /* handle the error condition */ }
     
     return YES;
 }
@@ -59,6 +60,42 @@
 {
     [VKSdk processOpenURL:url fromApplication:sourceApplication];
     return YES;
+}
+
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+
+- (void) remoteControlReceivedWithEvent: (UIEvent *) receivedEvent {
+    if (receivedEvent.type == UIEventTypeRemoteControl) {
+        
+        switch (receivedEvent.subtype) {
+                
+            case UIEventSubtypeRemoteControlTogglePlayPause:
+                [[PlayController sharedInstance] togglePlayPause];
+                break;
+                
+            case UIEventSubtypeRemoteControlPlay:
+                [[PlayController sharedInstance] play];
+                break;
+                
+            case UIEventSubtypeRemoteControlPause:
+                [[PlayController sharedInstance] pause];
+                break;
+                
+            case UIEventSubtypeRemoteControlPreviousTrack:
+                [[PlayController sharedInstance] playPreviousTrack];
+                break;
+                
+            case UIEventSubtypeRemoteControlNextTrack:
+                [[PlayController sharedInstance] playNextTrack];
+                break;
+                
+            default:
+                break;
+        }
+    }
 }
 
 @end
