@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "PlayController.h"
+#import "VKLoginViewController.h"
+#import "MyMusicTableViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 
@@ -20,18 +22,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-//    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-//    
-//    NSError *setCategoryError = nil;
-//    BOOL success = [audioSession setCategory:AVAudioSessionCategoryPlayback error:&setCategoryError];
-//    if (!success) { /* handle the error condition */ }
-//    
-//    NSError *activationError = nil;
-//    success = [audioSession setActive:YES error:&activationError];
-//    if (!success) { /* handle the error condition */ }
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    [VKSdk initializeWithDelegate:nil andAppId:@"4717791"];
+    
+    if ([VKSdk wakeUpSession]) {
+        UINavigationController* controller = [storyboard instantiateViewControllerWithIdentifier:@"mainNavigation"];
+        self.window.rootViewController = controller;
+    } else {
+        VKLoginViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"loginController"];
+        self.window.rootViewController = controller;
+    }
+    
+    [self.window makeKeyAndVisible];
     
     return YES;
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

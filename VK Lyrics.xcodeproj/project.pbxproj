@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		770325171A6F37CC00A1C0AE /* VSLyricsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 770325161A6F37CC00A1C0AE /* VSLyricsView.m */; };
 		7703251E1A70799100A1C0AE /* transparentTrackImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7703251D1A70799100A1C0AE /* transparentTrackImage.png */; };
+		77112A531A72E15E00DAAF74 /* iphone 6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77112A521A72E15E00DAAF74 /* iphone 6@2x.png */; };
+		77112A571A72EA2400DAAF74 /* iphone 6@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77112A561A72EA2400DAAF74 /* iphone 6@3x.png */; };
 		771E00821A7140A40025202C /* minTrackImageVolume.png in Resources */ = {isa = PBXBuildFile; fileRef = 771E007F1A7140A40025202C /* minTrackImageVolume.png */; };
 		771E00831A7140A40025202C /* minTrackImageVolume@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 771E00801A7140A40025202C /* minTrackImageVolume@2x.png */; };
 		771E00841A7140A40025202C /* minTrackImageVolume@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 771E00811A7140A40025202C /* minTrackImageVolume@3x.png */; };
@@ -62,6 +64,8 @@
 		770325151A6F37CC00A1C0AE /* VSLyricsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSLyricsView.h; sourceTree = "<group>"; };
 		770325161A6F37CC00A1C0AE /* VSLyricsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSLyricsView.m; sourceTree = "<group>"; };
 		7703251D1A70799100A1C0AE /* transparentTrackImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparentTrackImage.png; sourceTree = "<group>"; };
+		77112A521A72E15E00DAAF74 /* iphone 6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone 6@2x.png"; sourceTree = "<group>"; };
+		77112A561A72EA2400DAAF74 /* iphone 6@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone 6@3x.png"; sourceTree = "<group>"; };
 		771E007F1A7140A40025202C /* minTrackImageVolume.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minTrackImageVolume.png; sourceTree = "<group>"; };
 		771E00801A7140A40025202C /* minTrackImageVolume@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minTrackImageVolume@2x.png"; sourceTree = "<group>"; };
 		771E00811A7140A40025202C /* minTrackImageVolume@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minTrackImageVolume@3x.png"; sourceTree = "<group>"; };
@@ -78,14 +82,14 @@
 		778010241A61F91E00125940 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
 		77B336EE1A6001FF0047BA8C /* MyMusicTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMusicTableViewController.h; sourceTree = "<group>"; };
 		77B336EF1A6001FF0047BA8C /* MyMusicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMusicTableViewController.m; sourceTree = "<group>"; };
-		77B376CA1A5C117D00BC964E /* VK simple client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VK simple client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77B376CA1A5C117D00BC964E /* VK Lyrics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VK Lyrics.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77B376CE1A5C117D00BC964E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77B376CF1A5C117D00BC964E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		77B376D11A5C117D00BC964E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		77B376D21A5C117D00BC964E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		77B376DD1A5C117D00BC964E /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		77B376E01A5C117D00BC964E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		77B376E61A5C117D00BC964E /* VK simple clientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VK simple clientTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77B376E61A5C117D00BC964E /* VK LyricsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VK LyricsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77B376EB1A5C117D00BC964E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77B376EC1A5C117D00BC964E /* VK_simple_clientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VK_simple_clientTests.m; sourceTree = "<group>"; };
 		77B377011A5C887200BC964E /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
@@ -146,19 +150,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		778010261A61FA3900125940 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				778010231A61F91D00125940 /* Song.h */,
-				778010241A61F91E00125940 /* Song.m */,
-				77B59AE71A6485B7000FA0E8 /* Playlist.h */,
-				77B59AE81A6485B7000FA0E8 /* Playlist.m */,
-				77E7033D1A66C64900E7FF04 /* PlayController.h */,
-				77E7033E1A66C64900E7FF04 /* PlayController.m */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
 		778010281A61FA4E00125940 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,8 +177,8 @@
 		77B376CB1A5C117D00BC964E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				77B376CA1A5C117D00BC964E /* VK simple client.app */,
-				77B376E61A5C117D00BC964E /* VK simple clientTests.xctest */,
+				77B376CA1A5C117D00BC964E /* VK Lyrics.app */,
+				77B376E61A5C117D00BC964E /* VK LyricsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -201,7 +192,12 @@
 				777DB4871A65EA3A00E40FF6 /* AFSoundManager+getPlayerInfo.m */,
 				77E741011A728B6A005CF2D6 /* NSMutableArray+shuffle.h */,
 				77E741021A728B6A005CF2D6 /* NSMutableArray+shuffle.m */,
-				778010261A61FA3900125940 /* Model */,
+				778010231A61F91D00125940 /* Song.h */,
+				778010241A61F91E00125940 /* Song.m */,
+				77B59AE71A6485B7000FA0E8 /* Playlist.h */,
+				77B59AE81A6485B7000FA0E8 /* Playlist.m */,
+				77E7033D1A66C64900E7FF04 /* PlayController.h */,
+				77E7033E1A66C64900E7FF04 /* PlayController.m */,
 				778010281A61FA4E00125940 /* ViewControllers */,
 				77C9AF8A1A6570C800DF1FCE /* View */,
 				77B376DD1A5C117D00BC964E /* images.xcassets */,
@@ -216,6 +212,8 @@
 		77B376CD1A5C117D00BC964E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				77112A561A72EA2400DAAF74 /* iphone 6@3x.png */,
+				77112A521A72E15E00DAAF74 /* iphone 6@2x.png */,
 				77BFB79B1A68775C0000E0BD /* thumbVolumeBar.png */,
 				77BFB7A51A687CD70000E0BD /* volumeMax.png */,
 				77BFB7A61A687CD70000E0BD /* volumeMin.png */,
@@ -288,9 +286,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		77B376C91A5C117D00BC964E /* VK simple client */ = {
+		77B376C91A5C117D00BC964E /* VK Lyrics */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 77B376F01A5C117D00BC964E /* Build configuration list for PBXNativeTarget "VK simple client" */;
+			buildConfigurationList = 77B376F01A5C117D00BC964E /* Build configuration list for PBXNativeTarget "VK Lyrics" */;
 			buildPhases = (
 				6E982E75D50CAC6019001848 /* Check Pods Manifest.lock */,
 				77B376C61A5C117D00BC964E /* Sources */,
@@ -303,14 +301,14 @@
 			);
 			dependencies = (
 			);
-			name = "VK simple client";
+			name = "VK Lyrics";
 			productName = "VK simple client";
-			productReference = 77B376CA1A5C117D00BC964E /* VK simple client.app */;
+			productReference = 77B376CA1A5C117D00BC964E /* VK Lyrics.app */;
 			productType = "com.apple.product-type.application";
 		};
-		77B376E51A5C117D00BC964E /* VK simple clientTests */ = {
+		77B376E51A5C117D00BC964E /* VK LyricsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 77B376F31A5C117D00BC964E /* Build configuration list for PBXNativeTarget "VK simple clientTests" */;
+			buildConfigurationList = 77B376F31A5C117D00BC964E /* Build configuration list for PBXNativeTarget "VK LyricsTests" */;
 			buildPhases = (
 				A49C5C81AE982D9B4B4E2494 /* Check Pods Manifest.lock */,
 				77B376E21A5C117D00BC964E /* Sources */,
@@ -323,9 +321,9 @@
 			dependencies = (
 				77B376E81A5C117D00BC964E /* PBXTargetDependency */,
 			);
-			name = "VK simple clientTests";
+			name = "VK LyricsTests";
 			productName = "VK simple clientTests";
-			productReference = 77B376E61A5C117D00BC964E /* VK simple clientTests.xctest */;
+			productReference = 77B376E61A5C117D00BC964E /* VK LyricsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -346,7 +344,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 77B376C51A5C117D00BC964E /* Build configuration list for PBXProject "VK simple client" */;
+			buildConfigurationList = 77B376C51A5C117D00BC964E /* Build configuration list for PBXProject "VK Lyrics" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -359,8 +357,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				77B376C91A5C117D00BC964E /* VK simple client */,
-				77B376E51A5C117D00BC964E /* VK simple clientTests */,
+				77B376C91A5C117D00BC964E /* VK Lyrics */,
+				77B376E51A5C117D00BC964E /* VK LyricsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -370,6 +368,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77112A531A72E15E00DAAF74 /* iphone 6@2x.png in Resources */,
 				77BFB7991A6874710000E0BD /* minTrackImage.png in Resources */,
 				77B377021A5C887200BC964E /* placeholder.png in Resources */,
 				771E00821A7140A40025202C /* minTrackImageVolume.png in Resources */,
@@ -384,6 +383,7 @@
 				771E00831A7140A40025202C /* minTrackImageVolume@2x.png in Resources */,
 				77BFB7A81A687CD70000E0BD /* volumeMin.png in Resources */,
 				77BFB7AB1A687D780000E0BD /* volumeMax@2x.png in Resources */,
+				77112A571A72EA2400DAAF74 /* iphone 6@3x.png in Resources */,
 				771E00841A7140A40025202C /* minTrackImageVolume@3x.png in Resources */,
 				771E008A1A7140F30025202C /* maxTrackImageVolume@3x.png in Resources */,
 				771E00891A7140F30025202C /* maxTrackImageVolume@2x.png in Resources */,
@@ -511,7 +511,7 @@
 /* Begin PBXTargetDependency section */
 		77B376E81A5C117D00BC964E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 77B376C91A5C117D00BC964E /* VK simple client */;
+			target = 77B376C91A5C117D00BC964E /* VK Lyrics */;
 			targetProxy = 77B376E71A5C117D00BC964E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -621,7 +621,7 @@
 				EXECUTABLE_PREFIX = "";
 				INFOPLIST_FILE = "VK simple client/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "VK Lyrics";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -635,7 +635,7 @@
 				EXECUTABLE_PREFIX = "";
 				INFOPLIST_FILE = "VK simple client/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "VK Lyrics";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -655,7 +655,7 @@
 				);
 				INFOPLIST_FILE = "VK simple clientTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "VK LyricsTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VK simple client.app/VK simple client";
 			};
 			name = Debug;
@@ -671,7 +671,7 @@
 				);
 				INFOPLIST_FILE = "VK simple clientTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "VK LyricsTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VK simple client.app/VK simple client";
 			};
 			name = Release;
@@ -679,7 +679,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		77B376C51A5C117D00BC964E /* Build configuration list for PBXProject "VK simple client" */ = {
+		77B376C51A5C117D00BC964E /* Build configuration list for PBXProject "VK Lyrics" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				77B376EE1A5C117D00BC964E /* Debug */,
@@ -688,7 +688,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		77B376F01A5C117D00BC964E /* Build configuration list for PBXNativeTarget "VK simple client" */ = {
+		77B376F01A5C117D00BC964E /* Build configuration list for PBXNativeTarget "VK Lyrics" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				77B376F11A5C117D00BC964E /* Debug */,
@@ -697,7 +697,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		77B376F31A5C117D00BC964E /* Build configuration list for PBXNativeTarget "VK simple clientTests" */ = {
+		77B376F31A5C117D00BC964E /* Build configuration list for PBXNativeTarget "VK LyricsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				77B376F41A5C117D00BC964E /* Debug */,

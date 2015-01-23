@@ -37,8 +37,6 @@ static BOOL isPlaying;
 //    [self.seekSlider setMaximumTrackImage:[UIImage imageNamed:@"maxTrackImage.png"] forState:UIControlStateNormal];
     [self.seekSlider setMaximumTrackImage:[UIImage imageNamed:@"transparentTrackImage.png"] forState:UIControlStateNormal];
 
-    
-//    MPVolumeView* volumeBar = [[MPVolumeView alloc] initWithFrame:CGRectMake(self.volumeView.bounds.origin.x, self.volumeView.bounds.origin.y, self.volumeView.bounds.size.width, self.volumeView.bounds.size.height)];
     MPVolumeView* volumeBar = [[MPVolumeView alloc] initWithFrame:CGRectMake(45, self.view.bounds.size.height-34, self.view.bounds.size.width-90, 30)];
     [volumeBar setShowsVolumeSlider:YES];
     [volumeBar setShowsRouteButton:YES];
@@ -48,6 +46,7 @@ static BOOL isPlaying;
     [volumeBar setMaximumVolumeSliderImage:[UIImage imageNamed:@"maxTrackImageVolume.png"] forState:UIControlStateNormal];
 //    [volumeBar sizeToFit];
     [self.view addSubview:volumeBar];
+    
     
     [self updateLabels];
     
@@ -132,8 +131,6 @@ static BOOL isPlaying;
             [self.lyricsView getLyricsForTitle:currentSong.title artist:currentSong.artist];
             
         }
-//        int duration = [[Playlist sharedInstance] currentSong].duration;
-//        self.timeEndLabel.text = [NSString stringWithFormat:@"-%i:%02i",duration/60,duration%60];
     });
 }
 
@@ -172,6 +169,7 @@ static BOOL isPlaying;
     self.timeLabel.text = [formatter stringFromDate:elapsedTimeDate];
     
     NSDate *timeRemainingDate = [NSDate dateWithTimeIntervalSince1970:timeRemaining];
+    
     if (timeRemaining < 0) //не прогрузилось
     {
         self.timeEndLabel.text = @"-00:00";
@@ -182,20 +180,23 @@ static BOOL isPlaying;
         self.downloadProgressView.progress = downloadedPercentage;
         self.timeEndLabel.text = [NSString stringWithFormat:@"-%@",[formatter stringFromDate:timeRemainingDate]];
     }
-    if (!self.scrubbing) {
-     		   self.seekSlider.value = percentage;
-    }
-    if ([[PlayController sharedInstance] isPlaying]) {
+    
+    if (!self.scrubbing) self.seekSlider.value = percentage;
+    
+    if ([[PlayController sharedInstance] isPlaying])
         [self changeToPause];
-    } else {
+    else
         [self changeToPlay];
-    }
-    if ([PlayController sharedInstance].repeatEnabled) {
+    
+    if ([PlayController sharedInstance].repeatEnabled)
         [self.repeatButton setImage:[UIImage imageNamed:@"repeatEnabled"] forState:UIControlStateNormal];
-    } else {
+    else
         [self.repeatButton setImage:[UIImage imageNamed:@"repeat"] forState:UIControlStateNormal];
-    }
-
+    
+    if ([PlayController sharedInstance].shuffleEnabled)
+        [self.shuffleButton setImage:[UIImage imageNamed:@"shuffleEnabled"] forState:UIControlStateNormal];
+    else
+        [self.shuffleButton setImage:[UIImage imageNamed:@"shuffle"] forState:UIControlStateNormal];
 }
 
 

@@ -55,20 +55,24 @@ static NSMutableArray* shuffledArray;
 
 - (void)shuffleEnable
 {
-    Song* currentSong = [self currentSong];
-    NSMutableArray* bufArray = self.array;
-    shuffledArray = [NSMutableArray arrayWithArray:self.array];
-    [bufArray shuffle];
-    self.array = [NSMutableArray arrayWithArray:bufArray];
-    [self.array exchangeObjectAtIndex:0 withObjectAtIndex:[self.array indexOfObject:currentSong]];
-    self.currentTrackNumber = 0;
+    if (self.array.count > 0) {
+        Song* currentSong = [self currentSong];
+        NSMutableArray* bufArray = self.array;
+        shuffledArray = [NSMutableArray arrayWithArray:self.array];
+        [bufArray shuffle];
+        self.array = [NSMutableArray arrayWithArray:bufArray];
+        [self.array exchangeObjectAtIndex:0 withObjectAtIndex:[self.array indexOfObject:currentSong]];
+        self.currentTrackNumber = 0;
+    }
 }
 
 - (void)shuffleDisable
 {
-    Song* currentSong = [self currentSong];
-    self.array = shuffledArray;
-    self.currentTrackNumber = (int)[self.array indexOfObject:currentSong];
+    if (self.array.count > 0) {
+        Song* currentSong = [self currentSong];
+        self.array = shuffledArray;
+        self.currentTrackNumber = (int)[self.array indexOfObject:currentSong];
+    }
 }
 
 @end

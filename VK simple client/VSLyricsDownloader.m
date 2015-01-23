@@ -56,13 +56,11 @@ static NSString* tempLyrics;
             }
         }
         if (!lyricsString) {
-            NSLog(@"No LRC lyrics found!");
             [self getPlainTextLyricsForTitle:title artist:artist];
         } else if ([lyricsString isEqualToString:@""]){
-            NSLog(@"No LRC lyrics found!");
             [self getPlainTextLyricsForTitle:title artist:artist];
         } else {
-            NSLog(@"LRC lyrics found! Parsing...");
+            //LRC lyrics found
         }
     });
 }
@@ -89,31 +87,23 @@ static NSString* tempLyrics;
             NSString * key;
             [scanner scanUpToString:@"]" intoString:&key];
             if ([key hasPrefix:@"ti:"] || [key hasPrefix:@"title:"]) {
-                //                self.title = [key substringFromIndex:3];
+                //title
                 break;
             }
             else if ([key hasPrefix:@"ar:"] || [key hasPrefix:@"artist:"]) {
-                //                self.artist = [key substringFromIndex:3];
+                //artist
                 break;
             }
             else if ([key hasPrefix:@"al:"] || [key hasPrefix:@"album:"]) {
-                //                self.album = [key substringFromIndex:3];
-                break;
-            }
-            else if ([key hasPrefix:@"au:"]) {
-                //                self.lyricist = [key substringFromIndex:3];
+                //album
                 break;
             }
             else if ([key hasPrefix:@"by:"]) {
-                //                self.createAuthor = [key substringFromIndex:3];
-                break;
-            }
-            else if ([key hasPrefix:@"re:"]) {
-                //                self.createTool = [key substringFromIndex:3];
+                //author
                 break;
             }
             else if ([key hasPrefix:@"ve:"]) {
-                //                self.createToolVersion = [key substringFromIndex:3];
+                //version
                 break;
             }
             else if ([key hasPrefix:@"offset:"]) {
@@ -122,7 +112,7 @@ static NSString* tempLyrics;
                 break;
             }
             else if ([key hasPrefix:@"length:"]) {
-                //                self.length = convertStringToTimeInterval([key substringFromIndex:7]);
+                //length
                 break;
             }
             else {
@@ -160,15 +150,12 @@ static NSString* tempLyrics;
     if (LRCArray) {
         self.LRCLyrics = LRCArray;
         [self.delegate didRecieveLRC:self.LRCLyrics withOffset:self.offset];
-        NSLog(@"LRC lyrics parsed!");
-        
     }
 }
 
 
 -(void)getPlainTextLyricsForTitle:(NSString*)title artist:(NSString*)artist
 {
-    NSLog(@"Getting plain text");
     NSURL* lyricsURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.chartlyrics.com/apiv1.asmx/SearchLyricDirect?artist=%@&song=%@",[artist stringByReplacingOccurrencesOfString:@" " withString:@"%20"],[title stringByReplacingOccurrencesOfString:@" " withString:@"%20"]]];
     NSXMLParser* parser = [[NSXMLParser alloc] initWithContentsOfURL:lyricsURL];
     parser.delegate = self;
@@ -190,7 +177,6 @@ static NSString* tempLyrics;
         self.plainTextLyrics = tempLyrics;
         [self.delegate didRecievePlainTextLyrics:self.plainTextLyrics];
     } else {
-        NSLog(@"No plain text lyrics found!");
         [self.delegate didNotRecieveLyrics];
     }
 }
