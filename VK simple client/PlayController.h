@@ -27,8 +27,13 @@
 -(void)addToPlaylist:(NSArray *)array;
 -(void)addToPlaylist:(NSArray*)array andPlayTrack:(int)trackNumber;
 -(BOOL)isPlaying;
+-(NSTimeInterval)availableDuration;
+-(void)toggleShuffle;
+
 
 @property NSTimer* timer;
-@property (strong,nonatomic)NSDictionary* currentPlayingInfo;
+@property (strong,nonatomic) NSDictionary* currentPlayingInfo;
+@property (nonatomic) BOOL repeatEnabled;
+@property (nonatomic) BOOL shuffleEnabled;
 
 @end

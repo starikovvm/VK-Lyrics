@@ -7,6 +7,9 @@
 //
 
 #import "Playlist.h"
+#import "NSMutableArray+shuffle.h"
+
+static NSMutableArray* shuffledArray;
 
 @implementation Playlist
 
@@ -20,6 +23,14 @@
     });
     
     return _sharedInstance;
+}
+
+-(NSMutableArray*)array
+{
+    if (!_array) {
+        _array = [[NSMutableArray alloc] init];
+    }
+    return _array;
 }
 
 - (Song *)currentSong;
@@ -38,6 +49,26 @@
         return YES;
     }
     return NO;
+}
+
+
+
+- (void)shuffleEnable
+{
+    Song* currentSong = [self currentSong];
+    NSMutableArray* bufArray = self.array;
+    shuffledArray = [NSMutableArray arrayWithArray:self.array];
+    [bufArray shuffle];
+    self.array = [NSMutableArray arrayWithArray:bufArray];
+    [self.array exchangeObjectAtIndex:0 withObjectAtIndex:[self.array indexOfObject:currentSong]];
+    self.currentTrackNumber = 0;
+}
+
+- (void)shuffleDisable
+{
+    Song* currentSong = [self currentSong];
+    self.array = shuffledArray;
+    self.currentTrackNumber = (int)[self.array indexOfObject:currentSong];
 }
 
 @end

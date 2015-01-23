@@ -10,6 +10,8 @@
 #import "Playlist.h"
 //#import "AFSoundManager+getPlayerInfo.h"
 #import "PlayController.h"
+#import "VKSdk.h"
+
 
 @interface PlayerViewController ()
 
@@ -31,8 +33,11 @@ static BOOL isPlaying;
     self.nameLabel.textAlignment = NSTextAlignmentCenter; // centers text when no auto-scrolling is applied
     self.nameLabel.fadeLength = 12.f; // length of the left and right edge fade, 0 to disable
     [self.nameLabel observeApplicationNotifications];
-    [self.seekSlider setMinimumTrackImage:[UIImage imageNamed:@"minTrackImage.png"] forState:UIControlStateNormal];
-    [self.seekSlider setMaximumTrackImage:[UIImage imageNamed:@"maxTrackImage.png"] forState:UIControlStateNormal];
+    [self.seekSlider setMinimumTrackImage:[UIImage imageNamed:@"transparentTrackImage.png"] forState:UIControlStateNormal];
+//    [self.seekSlider setMaximumTrackImage:[UIImage imageNamed:@"maxTrackImage.png"] forState:UIControlStateNormal];
+    [self.seekSlider setMaximumTrackImage:[UIImage imageNamed:@"transparentTrackImage.png"] forState:UIControlStateNormal];
+
+    
 //    MPVolumeView* volumeBar = [[MPVolumeView alloc] initWithFrame:CGRectMake(self.volumeView.bounds.origin.x, self.volumeView.bounds.origin.y, self.volumeView.bounds.size.width, self.volumeView.bounds.size.height)];
     MPVolumeView* volumeBar = [[MPVolumeView alloc] initWithFrame:CGRectMake(45, self.view.bounds.size.height-34, self.view.bounds.size.width-90, 30)];
     [volumeBar setShowsVolumeSlider:YES];
@@ -121,34 +126,47 @@ static BOOL isPlaying;
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         Song* currentSong = [[Playlist sharedInstance] currentSong];
-        [self.nameLabel setText:currentSong.title refreshLabels:YES];
-        [self.artistLabel setText:currentSong.artist];
+        if (currentSong) {
+            [self.nameLabel setText:currentSong.title refreshLabels:YES];
+            [self.artistLabel setText:currentSong.artist];
+            [self.lyricsView getLyricsForTitle:currentSong.title artist:currentSong.artist];
+            
+        }
 //        int duration = [[Playlist sharedInstance] currentSong].duration;
 //        self.timeEndLabel.text = [NSString stringWithFormat:@"-%i:%02i",duration/60,duration%60];
     });
 }
 
+-(BOOL)automaticallyAdjustsScrollViewInsets
+{
+    return NO;
+}
 -(void)updateTime:(NSTimer *)timer;
 {
     
-    
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
     [formatter setDateFormat:@"mm:ss"];
+    
 //    NSDictionary* infoForCurrentPlaying = [[AFSoundManager sharedManager] gpi_getPlayerInfo];
     NSDictionary* infoForCurrentPlaying = [PlayController sharedInstance].currentPlayingInfo;
     NSTimeInterval elapsedTime = [[infoForCurrentPlaying objectForKey:@"elapsed time"] doubleValue];
     NSTimeInterval timeRemaining = [[infoForCurrentPlaying objectForKey:@"remaining time"] doubleValue];
     NSTimeInterval duration = [[infoForCurrentPlaying objectForKey:@"duration"] doubleValue];
+    NSTimeInterval downloadedTime = [[PlayController sharedInstance] availableDuration];
     
     Song* currentSong = [[Playlist sharedInstance] currentSong];
+    if (currentSong) {
+        
+        NSDictionary* nowPlayingDictionary = @{MPMediaItemPropertyTitle:currentSong.title,
+                                               MPMediaItemPropertyArtist:currentSong.artist,
+                                               MPMediaItemPropertyPlaybackDuration:[NSNumber numberWithDouble:duration],
+                                               MPNowPlayingInfoPropertyElapsedPlaybackTime:[NSNumber numberWithDouble:elapsedTime]};
+        [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:nowPlayingDictionary];
+    }
     
-    NSDictionary* nowPlayingDictionary = @{MPMediaItemPropertyTitle:currentSong.title,
-                                           MPMediaItemPropertyArtist:currentSong.artist,
-                                           MPMediaItemPropertyPlaybackDuration:[NSNumber numberWithDouble:duration],
-                                           MPNowPlayingInfoPropertyElapsedPlaybackTime:[NSNumber numberWithDouble:elapsedTime]};
-    [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:nowPlayingDictionary];
     
-    int percentage = (int)((elapsedTime * 1000)/duration);
+    float percentage = elapsedTime/duration;
+    float downloadedPercentage = downloadedTime/duration;
     
     NSDate *elapsedTimeDate = [NSDate dateWithTimeIntervalSince1970:elapsedTime];
     self.timeLabel.text = [formatter stringFromDate:elapsedTimeDate];
@@ -157,19 +175,27 @@ static BOOL isPlaying;
     if (timeRemaining < 0) //не прогрузилось
     {
         self.timeEndLabel.text = @"-00:00";
+        self.downloadProgressView.progress = 0;
     }
     else
     {
+        self.downloadProgressView.progress = downloadedPercentage;
         self.timeEndLabel.text = [NSString stringWithFormat:@"-%@",[formatter stringFromDate:timeRemainingDate]];
     }
     if (!self.scrubbing) {
-     		   self.seekSlider.value = percentage * 0.001;
+     		   self.seekSlider.value = percentage;
     }
     if ([[PlayController sharedInstance] isPlaying]) {
         [self changeToPause];
     } else {
         [self changeToPlay];
     }
+    if ([PlayController sharedInstance].repeatEnabled) {
+        [self.repeatButton setImage:[UIImage imageNamed:@"repeatEnabled"] forState:UIControlStateNormal];
+    } else {
+        [self.repeatButton setImage:[UIImage imageNamed:@"repeat"] forState:UIControlStateNormal];
+    }
+
 }
 
 
@@ -191,6 +217,41 @@ static BOOL isPlaying;
 - (IBAction)previousButtonPressed:(UIButton *)sender
 {
     [[PlayController sharedInstance] playPreviousTrack];
+}
+
+- (IBAction)toggleRepeat:(UIButton *)sender {
+    if ([PlayController sharedInstance].repeatEnabled) {
+        [PlayController sharedInstance].repeatEnabled = NO;
+        [self.repeatButton setImage:[UIImage imageNamed:@"repeat"] forState:UIControlStateNormal];
+    } else {
+        [PlayController sharedInstance].repeatEnabled = YES;
+        [self.repeatButton setImage:[UIImage imageNamed:@"repeatEnabled"] forState:UIControlStateNormal];
+    }
+}
+
+- (IBAction)addSong:(UIButton *)sender {
+    VKRequest* addRequest = [VKRequest requestWithMethod:@"audio.add" andParameters:@{@"audio_id" : @([[Playlist sharedInstance] currentSong].songId), @"owner_id" : @([[Playlist sharedInstance] currentSong].ownerId)} andHttpMethod:@"GET"];
+    [addRequest executeWithResultBlock:^(VKResponse *response) {
+        NSLog(@"Success!");
+        UIImageView* successImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"successMark"]];
+        successImageView.frame = CGRectMake(self.view.bounds.size.width/2-55, self.view.bounds.size.height/2-55, 110, 110);
+        [self.view addSubview:successImageView];
+        [NSTimer scheduledTimerWithTimeInterval:1.0 block:^{
+            [successImageView removeFromSuperview];
+        } repeats:NO];
+    } errorBlock:^(NSError *error) {
+        NSLog(@"ERROR! %@",error.description);
+    }];
+    
+}
+
+- (IBAction)toggleShuffle:(UIButton *)sender {
+    [[PlayController sharedInstance] toggleShuffle];
+    if ([PlayController sharedInstance].shuffleEnabled) {
+        [self.shuffleButton setImage:[UIImage imageNamed:@"shuffleEnabled"] forState:UIControlStateNormal];
+    } else {
+        [self.shuffleButton setImage:[UIImage imageNamed:@"shuffle"] forState:UIControlStateNormal];
+    }
 }
 
 - (IBAction)userIsScrubbing:(id)sender {

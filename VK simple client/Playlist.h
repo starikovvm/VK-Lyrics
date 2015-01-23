@@ -14,6 +14,8 @@
 + (Playlist *)sharedInstance;
 - (Song *)currentSong;
 - (BOOL)changeCurrentTrackTo:(int)trackNumber;
+- (void)shuffleEnable;
+- (void)shuffleDisable;
 
 @property (strong, nonatomic) NSMutableArray* array;
 @property (nonatomic) int currentTrackNumber;

@@ -37,4 +37,9 @@
     }];
 }
 
+-(void)testLyrics {
+    XCTAssert(YES, @"Pass");
+
+}
+
 @end

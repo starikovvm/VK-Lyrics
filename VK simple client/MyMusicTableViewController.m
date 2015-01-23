@@ -14,7 +14,7 @@
 #define LOADED_COUNT 100
 
 
-@interface MyMusicTableViewController ()
+@interface MyMusicTableViewController () <UISearchBarDelegate>
 
 @end
 
@@ -40,7 +40,8 @@ static UILabel *notLoadingLabel;
     
     self.edgesForExtendedLayout = UIRectEdgeAll;
     self.tableView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, CGRectGetHeight(self.tabBarController.tabBar.frame), 0.0f);
-    
+    self.searchBar.delegate = self;
+    self.isSearching = NO;
     [self loadMusicForPage:self.page];
 }
 
@@ -67,17 +68,21 @@ static UILabel *notLoadingLabel;
 
 -(void)loadMusicForPage:(int)page
 {
-    if (!currentUserId) {
-        [[[VKApi users] get] executeWithResultBlock:^(VKResponse *response) {
-            currentUserId = [[response.json objectAtIndex:0] objectForKey:@"id"];
+    if (self.isSearching) {
+        [self searchMusicWithQuery:self.searchQuery forPage:page];
+    } else {
+        if (!currentUserId) {
+            [[[VKApi users] get] executeWithResultBlock:^(VKResponse *response) {
+                currentUserId = [[response.json objectAtIndex:0] objectForKey:@"id"];
+                [self loadMusicWithUserID:currentUserId forPage:page];
+            } errorBlock:^(NSError *error) {
+                NSLog(@"An error occured: %@",error.description);
+                [self.tableView reloadData];
+            }];
+        }
+        if (!self.isLoading && currentUserId) {
             [self loadMusicWithUserID:currentUserId forPage:page];
-        } errorBlock:^(NSError *error) {
-            NSLog(@"An error occured: %@",error.description);
-            [self.tableView reloadData];
-        }];
-    }
-    if (!self.isLoading && currentUserId) {
-        [self loadMusicWithUserID:currentUserId forPage:page];
+        }
     }
 }
 
@@ -88,25 +93,41 @@ static UILabel *notLoadingLabel;
         NSNumber* offset = [NSNumber numberWithInt:(page*LOADED_COUNT)];
         
         VKRequest * audioReq = [VKApi requestWithMethod:@"audio.get" andParameters:@{VK_API_USER_ID : userID, VK_API_COUNT : @(LOADED_COUNT),VK_API_OFFSET : offset} andHttpMethod:@"GET"];
-        [audioReq executeWithResultBlock:^(VKResponse *response)
-         {
-             audioTotalCount = [[response.json objectForKey:VK_API_COUNT] intValue];
-             pagesTotalCount = ceilf((float)audioTotalCount/LOADED_COUNT); //количество страниц
-             for (NSDictionary* songDict in [response.json objectForKey:@"items"])
-             {
-                 Song* song = [[Song alloc] initWithJSON:songDict];
-                 [self.musicArray addObject:song];
-                 [notLoadingLabel removeFromSuperview];
-             }
-             self.isLoading = NO;
-             [self.tableView reloadData];
-         } errorBlock:^(NSError *error) {
-             NSLog(@"ERROR! %@",error.description);
-             [self.tableView reloadData];
-             self.isLoading = NO;
-             
-         }];
+        [self loadMusicWithRequest:audioReq];
     }
+
+}
+
+-(void)searchMusicWithQuery:(NSString*)query forPage:(int)page
+{
+    if (!self.isLoading) {
+        self.isLoading = YES;
+        NSNumber* offset = [NSNumber numberWithInt:(page*LOADED_COUNT)];
+        
+        VKRequest* audioReq = [VKRequest requestWithMethod:@"audio.search" andParameters:@{@"q" : query, @"autocomplete" : @(1), VK_API_COUNT : @(LOADED_COUNT),VK_API_OFFSET : offset, VK_API_SORT : @(2)} andHttpMethod:@"GET"];
+        [self loadMusicWithRequest:audioReq];
+    }
+}
+
+-(void)loadMusicWithRequest:(VKRequest*)audioReq
+{
+    [audioReq executeWithResultBlock:^(VKResponse *response)
+     {
+         audioTotalCount = [[response.json objectForKey:VK_API_COUNT] intValue];
+         pagesTotalCount = ceilf((float)audioTotalCount/LOADED_COUNT); //количество страниц
+         for (NSDictionary* songDict in [response.json objectForKey:@"items"])
+         {
+             Song* song = [[Song alloc] initWithJSON:songDict];
+             [self.musicArray addObject:song];
+             [notLoadingLabel removeFromSuperview];
+         }
+         self.isLoading = NO;
+         [self.tableView reloadData];
+     } errorBlock:^(NSError *error) {
+         NSLog(@"ERROR! %@",error.description);
+         [self.tableView reloadData];
+         self.isLoading = NO;
+     }];
 
 }
 
@@ -137,6 +158,7 @@ static UILabel *notLoadingLabel;
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         return 0;
     }
+    self.tableView.backgroundView = nil;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     return 1;
 }
@@ -217,6 +239,43 @@ static UILabel *notLoadingLabel;
     }
 }
 
+#pragma mark - Search bar
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    self.musicArray = [NSMutableArray new];
+    self.page = 0;
+    if ([searchBar.text isEqualToString:@""]) {
+        self.isSearching = NO;
+        [self loadMusicForPage:self.page];
+    } else {
+        self.isSearching = YES;
+        self.searchQuery = searchBar.text;
+        [self searchMusicWithQuery:self.searchQuery forPage:self.page];
+        NSLog(@"Searching %@",self.searchQuery);
+    }
+    [self.view endEditing:YES];
+}
+
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    self.isSearching = NO;
+    self.musicArray = [NSMutableArray new];
+    self.page = 0;
+    [self loadMusicForPage:self.page];
+    [self.view endEditing:YES];
+}
+
+-(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    [self.searchBar setShowsCancelButton:YES animated:YES];
+}
+
+-(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    [searchBar setShowsCancelButton:NO animated:YES];
+}
+
 /*
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
@@ -238,26 +297,25 @@ static UILabel *notLoadingLabel;
 }
 */
 
-
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
+    if (self.isSearching || indexPath.row >= self.musicArray.count) return NO;
     return YES;
 }
-*/
 
-/*
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
+        // Delete the row from the data
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
 */
+
 
 /*
 // Override to support rearranging the table view.

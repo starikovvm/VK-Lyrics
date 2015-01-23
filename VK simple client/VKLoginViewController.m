@@ -7,7 +7,8 @@
 //
 
 #import "VKLoginViewController.h"
-#import "PlayController.h"
+//#import "PlayController.h"
+#import "VSLyricsDownloader.h"
 
 @interface VKLoginViewController ()
 
@@ -21,7 +22,7 @@ static NSArray* SCOPE = nil;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [VKSdk initializeWithDelegate:self andAppId:@"4717791"];
-    SCOPE = @[VK_PER_FRIENDS, VK_PER_WALL, VK_PER_AUDIO, VK_PER_PHOTOS, VK_PER_EMAIL, VK_PER_MESSAGES];
+    SCOPE = @[VK_PER_FRIENDS, VK_PER_WALL, VK_PER_AUDIO];      //, VK_PER_PHOTOS, VK_PER_EMAIL, VK_PER_MESSAGES];
     if ([VKSdk wakeUpSession])
     {
         [self startWorking];

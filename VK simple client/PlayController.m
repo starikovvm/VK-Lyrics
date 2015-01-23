@@ -25,6 +25,8 @@
 -(instancetype)init
 {
     self = [super init];
+    _repeatEnabled = NO;
+    _shuffleEnabled = NO;
     return self;
 }
 
@@ -39,7 +41,10 @@
     int percentage = (int)((elapsedTime * 1000)/duration);
     
     if (percentage == 1000) {
-        [self playNextTrack];
+        if (_repeatEnabled)
+            [self playCurrentTrack];
+        else
+            [self playNextTrack];
     }
 }
 
@@ -83,6 +88,9 @@
 -(void)addToPlaylist:(NSArray*)array andPlayTrack:(int)trackNumber
 {
     [Playlist sharedInstance].array = [array mutableCopy];
+    if (self.shuffleEnabled) {
+        [[Playlist sharedInstance] shuffleEnable];
+    }
     [self playTrack:trackNumber];
 }
 
@@ -109,9 +117,32 @@
 {
     [[AFSoundManager sharedManager] resume];
 }
+
 -(void)pause
 {
     [[AFSoundManager sharedManager] pause];
+}
+
+-(void)toggleShuffle
+{
+    self.shuffleEnabled = !self.shuffleEnabled;
+    if (self.shuffleEnabled)
+        [[Playlist sharedInstance] shuffleEnable];
+    else
+        [[Playlist sharedInstance] shuffleDisable];
+}
+
+- (NSTimeInterval) availableDuration
+{
+    NSArray *loadedTimeRanges = [[[AFSoundManager sharedManager].player currentItem] loadedTimeRanges];
+    if (loadedTimeRanges.count > 0) {
+        CMTimeRange timeRange = [[loadedTimeRanges objectAtIndex:0] CMTimeRangeValue];
+        Float64 startSeconds = CMTimeGetSeconds(timeRange.start);
+        Float64 durationSeconds = CMTimeGetSeconds(timeRange.duration);
+        NSTimeInterval result = startSeconds + durationSeconds;
+        return result;
+    }
+    return 0;
 }
 
 

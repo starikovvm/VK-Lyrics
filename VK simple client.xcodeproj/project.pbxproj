@@ -7,33 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		770325171A6F37CC00A1C0AE /* VSLyricsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 770325161A6F37CC00A1C0AE /* VSLyricsView.m */; };
+		7703251E1A70799100A1C0AE /* transparentTrackImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7703251D1A70799100A1C0AE /* transparentTrackImage.png */; };
+		771E00821A7140A40025202C /* minTrackImageVolume.png in Resources */ = {isa = PBXBuildFile; fileRef = 771E007F1A7140A40025202C /* minTrackImageVolume.png */; };
+		771E00831A7140A40025202C /* minTrackImageVolume@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 771E00801A7140A40025202C /* minTrackImageVolume@2x.png */; };
+		771E00841A7140A40025202C /* minTrackImageVolume@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 771E00811A7140A40025202C /* minTrackImageVolume@3x.png */; };
+		771E00881A7140F30025202C /* maxTrackImageVolume.png in Resources */ = {isa = PBXBuildFile; fileRef = 771E00851A7140F30025202C /* maxTrackImageVolume.png */; };
+		771E00891A7140F30025202C /* maxTrackImageVolume@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 771E00861A7140F30025202C /* maxTrackImageVolume@2x.png */; };
+		771E008A1A7140F30025202C /* maxTrackImageVolume@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 771E00871A7140F30025202C /* maxTrackImageVolume@3x.png */; };
 		776680371A634C9200DE073B /* VKLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 776680361A634C9200DE073B /* VKLoginViewController.m */; };
 		777DB4881A65EA3A00E40FF6 /* AFSoundManager+getPlayerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 777DB4871A65EA3A00E40FF6 /* AFSoundManager+getPlayerInfo.m */; };
 		7780100D1A6019AB00125940 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7780100B1A6019AB00125940 /* Main.storyboard */; };
 		778010251A61F91E00125940 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 778010241A61F91E00125940 /* Song.m */; };
-		7780102B1A62B10F00125940 /* VKMusicAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7780102A1A62B10F00125940 /* VKMusicAPI.m */; };
 		77B336F01A6001FF0047BA8C /* MyMusicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B336EF1A6001FF0047BA8C /* MyMusicTableViewController.m */; };
 		77B376D01A5C117D00BC964E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B376CF1A5C117D00BC964E /* main.m */; };
 		77B376D31A5C117D00BC964E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B376D21A5C117D00BC964E /* AppDelegate.m */; };
 		77B376DE1A5C117D00BC964E /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77B376DD1A5C117D00BC964E /* images.xcassets */; };
 		77B376E11A5C117D00BC964E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77B376DF1A5C117D00BC964E /* LaunchScreen.xib */; };
 		77B376ED1A5C117D00BC964E /* VK_simple_clientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B376EC1A5C117D00BC964E /* VK_simple_clientTests.m */; };
-		77B376F81A5C148300BC964E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B376F71A5C148300BC964E /* User.m */; };
 		77B377021A5C887200BC964E /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 77B377011A5C887200BC964E /* placeholder.png */; };
 		77B377081A5D2DA600BC964E /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B377071A5D2DA600BC964E /* PlayerViewController.m */; };
 		77B59AE91A6485B7000FA0E8 /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B59AE81A6485B7000FA0E8 /* Playlist.m */; };
 		77BFB7991A6874710000E0BD /* minTrackImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFB7971A6874710000E0BD /* minTrackImage.png */; };
 		77BFB79A1A6874710000E0BD /* maxTrackImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFB7981A6874710000E0BD /* maxTrackImage.png */; };
 		77BFB79C1A68775C0000E0BD /* thumbVolumeBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFB79B1A68775C0000E0BD /* thumbVolumeBar.png */; };
-		77BFB79E1A6878190000E0BD /* minTrackImageVolume.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFB79D1A6878190000E0BD /* minTrackImageVolume.png */; };
-		77BFB7A01A6878800000E0BD /* maxTrackImageVolume.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFB79F1A6878800000E0BD /* maxTrackImageVolume.png */; };
 		77BFB7A71A687CD70000E0BD /* volumeMax.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFB7A51A687CD70000E0BD /* volumeMax.png */; };
 		77BFB7A81A687CD70000E0BD /* volumeMin.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFB7A61A687CD70000E0BD /* volumeMin.png */; };
 		77BFB7AB1A687D780000E0BD /* volumeMax@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFB7A91A687D780000E0BD /* volumeMax@2x.png */; };
 		77BFB7AC1A687D780000E0BD /* volumeMin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFB7AA1A687D780000E0BD /* volumeMin@2x.png */; };
 		77C9AF891A6570B500DF1FCE /* SongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C9AF881A6570B500DF1FCE /* SongCell.m */; };
 		77C9AF8C1A657CC300DF1FCE /* thumb25.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C9AF8B1A657CC300DF1FCE /* thumb25.png */; };
+		77D2A9471A6ECC040081D2F9 /* VSLyricsDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D2A9461A6ECC040081D2F9 /* VSLyricsDownloader.m */; };
 		77E7033F1A66C64900E7FF04 /* PlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E7033E1A66C64900E7FF04 /* PlayController.m */; };
+		77E741031A728B6A005CF2D6 /* NSMutableArray+shuffle.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E741021A728B6A005CF2D6 /* NSMutableArray+shuffle.m */; };
 		B92B27308E685EC2D9F21AFD /* libPods-VK simple client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE1A0C6F6DBB0F2702BC870 /* libPods-VK simple client.a */; };
 		BD6ED9CADD31FB5B21355E76 /* libPods-VK simple clientTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8BAA474C03AFA540EDF871 /* libPods-VK simple clientTests.a */; };
 		F09FAB0A6CD9980FA2B48953 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
@@ -53,6 +59,15 @@
 		5084D58E8F86C7C45CC0433F /* Pods-VK simple client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VK simple client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VK simple client/Pods-VK simple client.debug.xcconfig"; sourceTree = "<group>"; };
 		51CAF3541C8B140D7799B565 /* Pods-VK simple clientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VK simple clientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VK simple clientTests/Pods-VK simple clientTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6C8BAA474C03AFA540EDF871 /* libPods-VK simple clientTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VK simple clientTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		770325151A6F37CC00A1C0AE /* VSLyricsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSLyricsView.h; sourceTree = "<group>"; };
+		770325161A6F37CC00A1C0AE /* VSLyricsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSLyricsView.m; sourceTree = "<group>"; };
+		7703251D1A70799100A1C0AE /* transparentTrackImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparentTrackImage.png; sourceTree = "<group>"; };
+		771E007F1A7140A40025202C /* minTrackImageVolume.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minTrackImageVolume.png; sourceTree = "<group>"; };
+		771E00801A7140A40025202C /* minTrackImageVolume@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minTrackImageVolume@2x.png"; sourceTree = "<group>"; };
+		771E00811A7140A40025202C /* minTrackImageVolume@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minTrackImageVolume@3x.png"; sourceTree = "<group>"; };
+		771E00851A7140F30025202C /* maxTrackImageVolume.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maxTrackImageVolume.png; sourceTree = "<group>"; };
+		771E00861A7140F30025202C /* maxTrackImageVolume@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "maxTrackImageVolume@2x.png"; sourceTree = "<group>"; };
+		771E00871A7140F30025202C /* maxTrackImageVolume@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "maxTrackImageVolume@3x.png"; sourceTree = "<group>"; };
 		776680341A63434C00DE073B /* AppPrefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppPrefix.pch; sourceTree = "<group>"; };
 		776680351A634C9200DE073B /* VKLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKLoginViewController.h; sourceTree = "<group>"; };
 		776680361A634C9200DE073B /* VKLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKLoginViewController.m; sourceTree = "<group>"; };
@@ -61,8 +76,6 @@
 		7780100C1A6019AB00125940 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		778010231A61F91D00125940 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
 		778010241A61F91E00125940 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
-		778010291A62B10F00125940 /* VKMusicAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKMusicAPI.h; sourceTree = "<group>"; };
-		7780102A1A62B10F00125940 /* VKMusicAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKMusicAPI.m; sourceTree = "<group>"; };
 		77B336EE1A6001FF0047BA8C /* MyMusicTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMusicTableViewController.h; sourceTree = "<group>"; };
 		77B336EF1A6001FF0047BA8C /* MyMusicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMusicTableViewController.m; sourceTree = "<group>"; };
 		77B376CA1A5C117D00BC964E /* VK simple client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VK simple client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,8 +88,6 @@
 		77B376E61A5C117D00BC964E /* VK simple clientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VK simple clientTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77B376EB1A5C117D00BC964E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77B376EC1A5C117D00BC964E /* VK_simple_clientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VK_simple_clientTests.m; sourceTree = "<group>"; };
-		77B376F61A5C148300BC964E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		77B376F71A5C148300BC964E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		77B377011A5C887200BC964E /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		77B377061A5D2DA600BC964E /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
 		77B377071A5D2DA600BC964E /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
@@ -85,8 +96,6 @@
 		77BFB7971A6874710000E0BD /* minTrackImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minTrackImage.png; sourceTree = "<group>"; };
 		77BFB7981A6874710000E0BD /* maxTrackImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maxTrackImage.png; sourceTree = "<group>"; };
 		77BFB79B1A68775C0000E0BD /* thumbVolumeBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbVolumeBar.png; sourceTree = "<group>"; };
-		77BFB79D1A6878190000E0BD /* minTrackImageVolume.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minTrackImageVolume.png; sourceTree = "<group>"; };
-		77BFB79F1A6878800000E0BD /* maxTrackImageVolume.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maxTrackImageVolume.png; sourceTree = "<group>"; };
 		77BFB7A51A687CD70000E0BD /* volumeMax.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volumeMax.png; sourceTree = "<group>"; };
 		77BFB7A61A687CD70000E0BD /* volumeMin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volumeMin.png; sourceTree = "<group>"; };
 		77BFB7A91A687D780000E0BD /* volumeMax@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volumeMax@2x.png"; sourceTree = "<group>"; };
@@ -94,8 +103,12 @@
 		77C9AF871A6570B500DF1FCE /* SongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongCell.h; sourceTree = "<group>"; };
 		77C9AF881A6570B500DF1FCE /* SongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongCell.m; sourceTree = "<group>"; };
 		77C9AF8B1A657CC300DF1FCE /* thumb25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb25.png; sourceTree = "<group>"; };
+		77D2A9451A6ECC040081D2F9 /* VSLyricsDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSLyricsDownloader.h; sourceTree = "<group>"; };
+		77D2A9461A6ECC040081D2F9 /* VSLyricsDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSLyricsDownloader.m; sourceTree = "<group>"; };
 		77E7033D1A66C64900E7FF04 /* PlayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayController.h; sourceTree = "<group>"; };
 		77E7033E1A66C64900E7FF04 /* PlayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayController.m; sourceTree = "<group>"; };
+		77E741011A728B6A005CF2D6 /* NSMutableArray+shuffle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+shuffle.h"; sourceTree = "<group>"; };
+		77E741021A728B6A005CF2D6 /* NSMutableArray+shuffle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+shuffle.m"; sourceTree = "<group>"; };
 		DD23E136273EC6945DAF305B /* Pods-VK simple clientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VK simple clientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VK simple clientTests/Pods-VK simple clientTests.release.xcconfig"; sourceTree = "<group>"; };
 		E43122B1CBBF95451584820F /* Pods-VK simple client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VK simple client.release.xcconfig"; path = "Pods/Target Support Files/Pods-VK simple client/Pods-VK simple client.release.xcconfig"; sourceTree = "<group>"; };
 		FAE1A0C6F6DBB0F2702BC870 /* libPods-VK simple client.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VK simple client.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,38 +149,27 @@
 		778010261A61FA3900125940 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				77B59AE71A6485B7000FA0E8 /* Playlist.h */,
-				77B59AE81A6485B7000FA0E8 /* Playlist.m */,
 				778010231A61F91D00125940 /* Song.h */,
 				778010241A61F91E00125940 /* Song.m */,
-				77B376F61A5C148300BC964E /* User.h */,
-				77B376F71A5C148300BC964E /* User.m */,
+				77B59AE71A6485B7000FA0E8 /* Playlist.h */,
+				77B59AE81A6485B7000FA0E8 /* Playlist.m */,
+				77E7033D1A66C64900E7FF04 /* PlayController.h */,
+				77E7033E1A66C64900E7FF04 /* PlayController.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
 		};
-		778010281A61FA4E00125940 /* Controller */ = {
+		778010281A61FA4E00125940 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				776680351A634C9200DE073B /* VKLoginViewController.h */,
+				776680361A634C9200DE073B /* VKLoginViewController.m */,
 				77B336EE1A6001FF0047BA8C /* MyMusicTableViewController.h */,
 				77B336EF1A6001FF0047BA8C /* MyMusicTableViewController.m */,
 				77B377061A5D2DA600BC964E /* PlayerViewController.h */,
 				77B377071A5D2DA600BC964E /* PlayerViewController.m */,
-				77E7033D1A66C64900E7FF04 /* PlayController.h */,
-				77E7033E1A66C64900E7FF04 /* PlayController.m */,
-				776680351A634C9200DE073B /* VKLoginViewController.h */,
-				776680361A634C9200DE073B /* VKLoginViewController.m */,
 			);
-			name = Controller;
-			sourceTree = "<group>";
-		};
-		7780102F1A62B13500125940 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				778010291A62B10F00125940 /* VKMusicAPI.h */,
-				7780102A1A62B10F00125940 /* VKMusicAPI.m */,
-			);
-			name = API;
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		77B376C11A5C117D00BC964E = {
@@ -197,13 +199,15 @@
 				77B376D21A5C117D00BC964E /* AppDelegate.m */,
 				777DB4861A65EA3A00E40FF6 /* AFSoundManager+getPlayerInfo.h */,
 				777DB4871A65EA3A00E40FF6 /* AFSoundManager+getPlayerInfo.m */,
-				7780102F1A62B13500125940 /* API */,
+				77E741011A728B6A005CF2D6 /* NSMutableArray+shuffle.h */,
+				77E741021A728B6A005CF2D6 /* NSMutableArray+shuffle.m */,
 				778010261A61FA3900125940 /* Model */,
-				778010281A61FA4E00125940 /* Controller */,
+				778010281A61FA4E00125940 /* ViewControllers */,
 				77C9AF8A1A6570C800DF1FCE /* View */,
 				77B376DD1A5C117D00BC964E /* images.xcassets */,
 				7780100B1A6019AB00125940 /* Main.storyboard */,
 				77B376DF1A5C117D00BC964E /* LaunchScreen.xib */,
+				77CE20AD1A6C919200FC079D /* VSLyrics */,
 				77B376CD1A5C117D00BC964E /* Supporting Files */,
 			);
 			path = "VK simple client";
@@ -213,14 +217,19 @@
 			isa = PBXGroup;
 			children = (
 				77BFB79B1A68775C0000E0BD /* thumbVolumeBar.png */,
-				77BFB79D1A6878190000E0BD /* minTrackImageVolume.png */,
-				77BFB79F1A6878800000E0BD /* maxTrackImageVolume.png */,
 				77BFB7A51A687CD70000E0BD /* volumeMax.png */,
 				77BFB7A61A687CD70000E0BD /* volumeMin.png */,
 				77BFB7A91A687D780000E0BD /* volumeMax@2x.png */,
 				77BFB7AA1A687D780000E0BD /* volumeMin@2x.png */,
+				7703251D1A70799100A1C0AE /* transparentTrackImage.png */,
 				77BFB7971A6874710000E0BD /* minTrackImage.png */,
 				77BFB7981A6874710000E0BD /* maxTrackImage.png */,
+				771E007F1A7140A40025202C /* minTrackImageVolume.png */,
+				771E00801A7140A40025202C /* minTrackImageVolume@2x.png */,
+				771E00811A7140A40025202C /* minTrackImageVolume@3x.png */,
+				771E00851A7140F30025202C /* maxTrackImageVolume.png */,
+				771E00861A7140F30025202C /* maxTrackImageVolume@2x.png */,
+				771E00871A7140F30025202C /* maxTrackImageVolume@3x.png */,
 				77B377011A5C887200BC964E /* placeholder.png */,
 				77C9AF8B1A657CC300DF1FCE /* thumb25.png */,
 				77B376CE1A5C117D00BC964E /* Info.plist */,
@@ -254,6 +263,17 @@
 				77C9AF881A6570B500DF1FCE /* SongCell.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		77CE20AD1A6C919200FC079D /* VSLyrics */ = {
+			isa = PBXGroup;
+			children = (
+				77D2A9451A6ECC040081D2F9 /* VSLyricsDownloader.h */,
+				77D2A9461A6ECC040081D2F9 /* VSLyricsDownloader.m */,
+				770325151A6F37CC00A1C0AE /* VSLyricsView.h */,
+				770325161A6F37CC00A1C0AE /* VSLyricsView.m */,
+			);
+			name = VSLyrics;
 			sourceTree = "<group>";
 		};
 		809E9EC39496E3078131E5C5 /* Frameworks */ = {
@@ -352,16 +372,21 @@
 			files = (
 				77BFB7991A6874710000E0BD /* minTrackImage.png in Resources */,
 				77B377021A5C887200BC964E /* placeholder.png in Resources */,
-				77BFB7A01A6878800000E0BD /* maxTrackImageVolume.png in Resources */,
+				771E00821A7140A40025202C /* minTrackImageVolume.png in Resources */,
 				77BFB7AC1A687D780000E0BD /* volumeMin@2x.png in Resources */,
 				77BFB79C1A68775C0000E0BD /* thumbVolumeBar.png in Resources */,
 				77B376E11A5C117D00BC964E /* LaunchScreen.xib in Resources */,
 				77C9AF8C1A657CC300DF1FCE /* thumb25.png in Resources */,
+				7703251E1A70799100A1C0AE /* transparentTrackImage.png in Resources */,
+				771E00881A7140F30025202C /* maxTrackImageVolume.png in Resources */,
 				77BFB7A71A687CD70000E0BD /* volumeMax.png in Resources */,
 				77B376DE1A5C117D00BC964E /* images.xcassets in Resources */,
+				771E00831A7140A40025202C /* minTrackImageVolume@2x.png in Resources */,
 				77BFB7A81A687CD70000E0BD /* volumeMin.png in Resources */,
-				77BFB79E1A6878190000E0BD /* minTrackImageVolume.png in Resources */,
 				77BFB7AB1A687D780000E0BD /* volumeMax@2x.png in Resources */,
+				771E00841A7140A40025202C /* minTrackImageVolume@3x.png in Resources */,
+				771E008A1A7140F30025202C /* maxTrackImageVolume@3x.png in Resources */,
+				771E00891A7140F30025202C /* maxTrackImageVolume@2x.png in Resources */,
 				7780100D1A6019AB00125940 /* Main.storyboard in Resources */,
 				77BFB79A1A6874710000E0BD /* maxTrackImage.png in Resources */,
 			);
@@ -459,11 +484,12 @@
 			files = (
 				777DB4881A65EA3A00E40FF6 /* AFSoundManager+getPlayerInfo.m in Sources */,
 				77B336F01A6001FF0047BA8C /* MyMusicTableViewController.m in Sources */,
+				77D2A9471A6ECC040081D2F9 /* VSLyricsDownloader.m in Sources */,
+				770325171A6F37CC00A1C0AE /* VSLyricsView.m in Sources */,
 				77E7033F1A66C64900E7FF04 /* PlayController.m in Sources */,
-				77B376F81A5C148300BC964E /* User.m in Sources */,
 				776680371A634C9200DE073B /* VKLoginViewController.m in Sources */,
+				77E741031A728B6A005CF2D6 /* NSMutableArray+shuffle.m in Sources */,
 				77C9AF891A6570B500DF1FCE /* SongCell.m in Sources */,
-				7780102B1A62B10F00125940 /* VKMusicAPI.m in Sources */,
 				77B376D31A5C117D00BC964E /* AppDelegate.m in Sources */,
 				77B59AE91A6485B7000FA0E8 /* Playlist.m in Sources */,
 				77B377081A5D2DA600BC964E /* PlayerViewController.m in Sources */,

@@ -12,9 +12,11 @@
 
 @interface MyMusicTableViewController : UITableViewController
 
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong,nonatomic) NSMutableArray *musicArray;
 @property (nonatomic) float isLoading;
 @property (nonatomic) int page;
-
+@property (nonatomic) float isSearching;
+@property (strong,nonatomic) NSString* searchQuery;
 
 @end
