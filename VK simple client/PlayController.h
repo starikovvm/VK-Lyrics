@@ -27,8 +27,9 @@
 -(void)addToPlaylist:(NSArray *)array;
 -(void)addToPlaylist:(NSArray*)array andPlayTrack:(int)trackNumber;
 -(BOOL)isPlaying;
--(NSTimeInterval)availableDuration;
 -(void)toggleShuffle;
+-(NSTimeInterval)availableDuration;
+-(NSTimeInterval)currentTime;
 
 
 @property NSTimer* timer;

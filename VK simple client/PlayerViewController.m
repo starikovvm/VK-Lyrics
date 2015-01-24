@@ -46,7 +46,7 @@ static BOOL isPlaying;
     [volumeBar setMaximumVolumeSliderImage:[UIImage imageNamed:@"maxTrackImageVolume.png"] forState:UIControlStateNormal];
 //    [volumeBar sizeToFit];
     [self.view addSubview:volumeBar];
-    
+    self.lyricsView.delegate = self;
     
     [self updateLabels];
     
@@ -144,7 +144,6 @@ static BOOL isPlaying;
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
     [formatter setDateFormat:@"mm:ss"];
     
-//    NSDictionary* infoForCurrentPlaying = [[AFSoundManager sharedManager] gpi_getPlayerInfo];
     NSDictionary* infoForCurrentPlaying = [PlayController sharedInstance].currentPlayingInfo;
     NSTimeInterval elapsedTime = [[infoForCurrentPlaying objectForKey:@"elapsed time"] doubleValue];
     NSTimeInterval timeRemaining = [[infoForCurrentPlaying objectForKey:@"remaining time"] doubleValue];
@@ -199,6 +198,12 @@ static BOOL isPlaying;
         [self.shuffleButton setImage:[UIImage imageNamed:@"shuffle"] forState:UIControlStateNormal];
 }
 
+
+#pragma mark - VSLyricsViewDelegate
+
+-(NSTimeInterval)currentTime{
+    return [[PlayController sharedInstance] currentTime];
+}
 
 
 #pragma mark - IBActions

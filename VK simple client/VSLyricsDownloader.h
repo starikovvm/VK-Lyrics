@@ -12,7 +12,7 @@
 
 @protocol VSLyricsDownloaderDelegate <NSObject>
 
--(void)didRecieveLRC:(NSArray*)lyricsArray withOffset:(float)offset;
+-(void)didRecieveLRC:(NSArray*)lyricsArray;
 -(void)didRecievePlainTextLyrics:(NSString*)lyrics;
 -(void)didNotRecieveLyrics;
 

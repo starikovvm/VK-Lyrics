@@ -15,7 +15,7 @@
 #import "Song.h"
 #import "VSLyricsView.h"
 
-@interface PlayerViewController : UIViewController
+@interface PlayerViewController : UIViewController <VSLyricsViewDelegate>
 - (IBAction)playButtonPressed:(UIButton *)sender;
 - (IBAction)nextButtonPressed:(UIButton *)sender;
 - (IBAction)previousButtonPressed:(UIButton *)sender;

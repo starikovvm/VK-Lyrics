@@ -8,6 +8,13 @@
 
 #import "VSLyricsView.h"
 
+@interface VSLyricsView ()
+
+@property NSTimer* timer;
+
+@end
+
+
 @implementation VSLyricsView
 
 /*
@@ -17,6 +24,7 @@
     // Drawing code
 }
 */
+
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -58,29 +66,69 @@
 -(void)getLyricsForTitle:(NSString*)title artist:(NSString*)artist
 {
     self.textView.text = @"";
+    _LRCArray = nil;
     [[VSLyricsDownloader sharedInstance] getLRCForTitle:title artist:artist];
 }
 
 -(void)setFont:(UIFont *)font{
+    _font = font;
     _textView.font = font;
 }
 
 -(void)setTextColor:(UIColor *)textColor{
+    _textColor = textColor;
     _textView.textColor = textColor;
+}
+
+-(void)updateTextForTime:(NSTimeInterval)time{
+    if (_LRCArray) {
+        if (_LRCArray.count >1) {
+            for (unsigned long i = 0;i<_LRCArray.count - 2;i++) {
+                NSTimeInterval currentStringTime =[_LRCArray[i][0] doubleValue];
+                NSTimeInterval nextStringTime = [_LRCArray[i+1][0] doubleValue];
+                if (currentStringTime <= time && nextStringTime > time) {
+                    self.textView.text = _LRCArray[i][1];
+                    return;
+                }
+            }
+            self.textView.text = @"";
+        }
+    }
+}
+
+-(void)timerAction
+{
+    [self updateTextForTime:[self.delegate currentTime]];
+}
+
+-(void)startTimer
+{
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
+}
+
+-(void)stopTimer
+{
+    if (self.timer) {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
 }
 
 #pragma mark - VSLyricsDownloaderDelegate
 
--(void)didRecieveLRC:(NSArray *)lyricsArray withOffset:(float)offset
+-(void)didRecieveLRC:(NSArray *)lyricsArray
 {
+    [self startTimer];
     dispatch_async(dispatch_get_main_queue(), ^{
         _textView.scrollEnabled = NO;
-        _textView.text = @"Downloaded LRC";
+        _LRCArray = lyricsArray;
     });
 }
 -(void)didRecievePlainTextLyrics:(NSString *)lyrics
 {
+    [self stopTimer];
     dispatch_async(dispatch_get_main_queue(), ^{
+        _LRCArray = nil;
         _textView.text = lyrics;
         _textView.scrollEnabled = YES;
     });
@@ -88,7 +136,9 @@
 
 -(void)didNotRecieveLyrics
 {
+    [self stopTimer];
     dispatch_async(dispatch_get_main_queue(), ^{
+        _LRCArray = nil;
         _textView.text = @"";
         _textView.scrollEnabled = NO;
         NSLog(@"Did not recieve any lyrics");

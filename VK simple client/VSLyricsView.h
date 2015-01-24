@@ -9,16 +9,25 @@
 #import <UIKit/UIKit.h>
 #import "VSLyricsDownloader.h"
 
+@protocol VSLyricsViewDelegate <NSObject>
+
+-(NSTimeInterval)currentTime;
+
+@end
+
 
 @interface VSLyricsView : UIView <VSLyricsDownloaderDelegate>
 
 -(void)getLyricsForTitle:(NSString*)title artist:(NSString*)artist;
 
+@property (weak, nonatomic) id<VSLyricsViewDelegate> delegate;
 @property (strong, nonatomic) UIScrollView* scrollView;
 @property (strong, nonatomic) UITextView* textView;
 @property (strong, nonatomic) UIFont* font;
 @property (strong, nonatomic) UIFont* highlightedTextFont;
 @property (strong, nonatomic) UIColor* textColor;
 @property (strong, nonatomic) UIColor* highlightedTextColor;
+@property (strong, nonatomic) NSArray* LRCArray;
+@property (nonatomic) NSTimeInterval* offset;
 
 @end

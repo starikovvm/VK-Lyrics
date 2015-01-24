@@ -20,7 +20,6 @@ static NSArray* SCOPE = nil;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     [VKSdk initializeWithDelegate:self andAppId:@"4717791"];
     SCOPE = @[VK_PER_FRIENDS, VK_PER_WALL, VK_PER_AUDIO];      //, VK_PER_PHOTOS, VK_PER_EMAIL, VK_PER_MESSAGES];
     if ([VKSdk wakeUpSession])
@@ -62,17 +61,6 @@ static NSArray* SCOPE = nil;
 - (void)vkSdkUserDeniedAccess:(VKError *)authorizationError {
     [[[UIAlertView alloc] initWithTitle:nil message:@"Access denied" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)logIn:(UIButton *)sender {
     [VKSdk authorize:SCOPE];

@@ -149,7 +149,7 @@ static NSString* tempLyrics;
     }];
     if (LRCArray) {
         self.LRCLyrics = LRCArray;
-        [self.delegate didRecieveLRC:self.LRCLyrics withOffset:self.offset];
+        [self.delegate didRecieveLRC:self.LRCLyrics];
     }
 }
 

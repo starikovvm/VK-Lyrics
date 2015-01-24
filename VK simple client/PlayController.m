@@ -145,5 +145,11 @@
     return 0;
 }
 
+-(NSTimeInterval)currentTime {
+    NSDictionary* infoForCurrentPlaying = [PlayController sharedInstance].currentPlayingInfo;
+    NSTimeInterval elapsedTime = [[infoForCurrentPlaying objectForKey:@"elapsed time"] doubleValue];
+    return elapsedTime;
+}
+
 
 @end

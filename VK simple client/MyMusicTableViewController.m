@@ -31,8 +31,6 @@ static UILabel *notLoadingLabel;
     self.page = 0;
     self.isLoading = NO;
     
-//    [self becomeFirstResponder];
-    
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(reloadMusic) forControlEvents:UIControlEventValueChanged];
     
