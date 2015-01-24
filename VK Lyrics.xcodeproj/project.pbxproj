@@ -188,16 +188,7 @@
 			children = (
 				77B376D11A5C117D00BC964E /* AppDelegate.h */,
 				77B376D21A5C117D00BC964E /* AppDelegate.m */,
-				777DB4861A65EA3A00E40FF6 /* AFSoundManager+getPlayerInfo.h */,
-				777DB4871A65EA3A00E40FF6 /* AFSoundManager+getPlayerInfo.m */,
-				77E741011A728B6A005CF2D6 /* NSMutableArray+shuffle.h */,
-				77E741021A728B6A005CF2D6 /* NSMutableArray+shuffle.m */,
-				778010231A61F91D00125940 /* Song.h */,
-				778010241A61F91E00125940 /* Song.m */,
-				77B59AE71A6485B7000FA0E8 /* Playlist.h */,
-				77B59AE81A6485B7000FA0E8 /* Playlist.m */,
-				77E7033D1A66C64900E7FF04 /* PlayController.h */,
-				77E7033E1A66C64900E7FF04 /* PlayController.m */,
+				77E2241B1A74287E001A156D /* Classes */,
 				778010281A61FA4E00125940 /* ViewControllers */,
 				77C9AF8A1A6570C800DF1FCE /* View */,
 				77B376DD1A5C117D00BC964E /* images.xcassets */,
@@ -272,6 +263,23 @@
 				770325161A6F37CC00A1C0AE /* VSLyricsView.m */,
 			);
 			name = VSLyrics;
+			sourceTree = "<group>";
+		};
+		77E2241B1A74287E001A156D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				777DB4861A65EA3A00E40FF6 /* AFSoundManager+getPlayerInfo.h */,
+				777DB4871A65EA3A00E40FF6 /* AFSoundManager+getPlayerInfo.m */,
+				77E741011A728B6A005CF2D6 /* NSMutableArray+shuffle.h */,
+				77E741021A728B6A005CF2D6 /* NSMutableArray+shuffle.m */,
+				778010231A61F91D00125940 /* Song.h */,
+				778010241A61F91E00125940 /* Song.m */,
+				77B59AE71A6485B7000FA0E8 /* Playlist.h */,
+				77B59AE81A6485B7000FA0E8 /* Playlist.m */,
+				77E7033D1A66C64900E7FF04 /* PlayController.h */,
+				77E7033E1A66C64900E7FF04 /* PlayController.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		809E9EC39496E3078131E5C5 /* Frameworks */ = {
