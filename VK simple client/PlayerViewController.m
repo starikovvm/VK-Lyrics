@@ -34,7 +34,6 @@ static BOOL isPlaying;
     self.nameLabel.fadeLength = 12.f; // length of the left and right edge fade, 0 to disable
     [self.nameLabel observeApplicationNotifications];
     [self.seekSlider setMinimumTrackImage:[UIImage imageNamed:@"transparentTrackImage.png"] forState:UIControlStateNormal];
-//    [self.seekSlider setMaximumTrackImage:[UIImage imageNamed:@"maxTrackImage.png"] forState:UIControlStateNormal];
     [self.seekSlider setMaximumTrackImage:[UIImage imageNamed:@"transparentTrackImage.png"] forState:UIControlStateNormal];
 
     MPVolumeView* volumeBar = [[MPVolumeView alloc] initWithFrame:CGRectMake(45, self.view.bounds.size.height-34, self.view.bounds.size.width-90, 30)];
@@ -44,8 +43,10 @@ static BOOL isPlaying;
     [volumeBar setVolumeThumbImage:[UIImage imageNamed:@"thumbVolumeBar.png"] forState:UIControlStateNormal];
     [volumeBar setMinimumVolumeSliderImage:[UIImage imageNamed:@"minTrackImageVolume.png"] forState:UIControlStateNormal];
     [volumeBar setMaximumVolumeSliderImage:[UIImage imageNamed:@"maxTrackImageVolume.png"] forState:UIControlStateNormal];
-//    [volumeBar sizeToFit];
     [self.view addSubview:volumeBar];
+    self.lyricsView.LRCTextFont = [UIFont fontWithName:@"Helvetica Neue" size:22.0f];
+    self.lyricsView.LRCTextColor = [UIColor colorWithWhite:0.325 alpha:1.000];
+    self.lyricsView.textColor = [UIColor colorWithWhite:0.325 alpha:1.000];
     self.lyricsView.delegate = self;
     
     [self updateLabels];

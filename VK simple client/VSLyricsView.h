@@ -21,12 +21,12 @@
 -(void)getLyricsForTitle:(NSString*)title artist:(NSString*)artist;
 
 @property (weak, nonatomic) id<VSLyricsViewDelegate> delegate;
-@property (strong, nonatomic) UIScrollView* scrollView;
+@property (strong, nonatomic) UILabel* textLabel;
 @property (strong, nonatomic) UITextView* textView;
 @property (strong, nonatomic) UIFont* font;
-@property (strong, nonatomic) UIFont* highlightedTextFont;
+@property (strong, nonatomic) UIFont* LRCTextFont;
 @property (strong, nonatomic) UIColor* textColor;
-@property (strong, nonatomic) UIColor* highlightedTextColor;
+@property (strong, nonatomic) UIColor* LRCTextColor;
 @property (strong, nonatomic) NSArray* LRCArray;
 @property (nonatomic) NSTimeInterval* offset;
 
