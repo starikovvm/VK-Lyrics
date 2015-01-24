@@ -12,6 +12,7 @@
 #import "MyMusicTableViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
+#import <Crashlytics/Crashlytics.h>
 
 @interface AppDelegate () 
 
@@ -22,6 +23,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [Crashlytics startWithAPIKey:@"123dacd4faccb8a97ec46d77de14fb5edca929ca"];
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

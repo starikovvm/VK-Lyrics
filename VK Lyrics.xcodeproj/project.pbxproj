@@ -37,6 +37,7 @@
 		77BFB7A81A687CD70000E0BD /* volumeMin.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFB7A61A687CD70000E0BD /* volumeMin.png */; };
 		77BFB7AB1A687D780000E0BD /* volumeMax@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFB7A91A687D780000E0BD /* volumeMax@2x.png */; };
 		77BFB7AC1A687D780000E0BD /* volumeMin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFB7AA1A687D780000E0BD /* volumeMin@2x.png */; };
+		77C2CAAB1A743C4500B21789 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77C2CAAA1A743C4500B21789 /* Crashlytics.framework */; };
 		77C9AF891A6570B500DF1FCE /* SongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C9AF881A6570B500DF1FCE /* SongCell.m */; };
 		77C9AF8C1A657CC300DF1FCE /* thumb25.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C9AF8B1A657CC300DF1FCE /* thumb25.png */; };
 		77D2A9471A6ECC040081D2F9 /* VSLyricsDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D2A9461A6ECC040081D2F9 /* VSLyricsDownloader.m */; };
@@ -105,6 +106,7 @@
 		77BFB7A61A687CD70000E0BD /* volumeMin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volumeMin.png; sourceTree = "<group>"; };
 		77BFB7A91A687D780000E0BD /* volumeMax@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volumeMax@2x.png"; sourceTree = "<group>"; };
 		77BFB7AA1A687D780000E0BD /* volumeMin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volumeMin@2x.png"; sourceTree = "<group>"; };
+		77C2CAAA1A743C4500B21789 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		77C9AF871A6570B500DF1FCE /* SongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongCell.h; sourceTree = "<group>"; };
 		77C9AF881A6570B500DF1FCE /* SongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongCell.m; sourceTree = "<group>"; };
 		77C9AF8B1A657CC300DF1FCE /* thumb25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb25.png; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77C2CAAB1A743C4500B21789 /* Crashlytics.framework in Frameworks */,
 				B92B27308E685EC2D9F21AFD /* libPods-VK simple client.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,6 +191,7 @@
 		77B376CC1A5C117D00BC964E /* VK simple client */ = {
 			isa = PBXGroup;
 			children = (
+				77C2CAAA1A743C4500B21789 /* Crashlytics.framework */,
 				77B376D11A5C117D00BC964E /* AppDelegate.h */,
 				77B376D21A5C117D00BC964E /* AppDelegate.m */,
 				77E2241B1A74287E001A156D /* Classes */,
@@ -425,7 +429,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export CODESIGN_ALLOCATE=/Library/JailCoder/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ]; then\n/Library/JailCoder/Entitlements/Entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi";
+			shellScript = "export CODESIGN_ALLOCATE=/Library/JailCoder/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ]; then\n/Library/JailCoder/Entitlements/Entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi\n./Crashlytics.framework/run 123dacd4faccb8a97ec46d77de14fb5edca929ca b7735d30ae3c49b61c4ca9a2be132c6d1918e30b98631e71570e23311bee0e6c";
 		};
 		6E982E75D50CAC6019001848 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -631,6 +635,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				EXECUTABLE_PREFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VK",
+					simple,
+					client,
+				);
 				INFOPLIST_FILE = "VK simple client/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "VK Lyrics";
@@ -645,6 +655,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				EXECUTABLE_PREFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VK",
+					simple,
+					client,
+				);
 				INFOPLIST_FILE = "VK simple client/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "VK Lyrics";
