@@ -23,7 +23,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [Crashlytics startWithAPIKey:@"123dacd4faccb8a97ec46d77de14fb5edca929ca"];
+    [Crashlytics startWithAPIKey:@"de3a472a3e1d4921d7bbcbb65a3aa9e8ed8b18e0"];
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
