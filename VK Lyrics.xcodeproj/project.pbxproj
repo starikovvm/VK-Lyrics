@@ -40,6 +40,7 @@
 		77C9AF891A6570B500DF1FCE /* SongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C9AF881A6570B500DF1FCE /* SongCell.m */; };
 		77C9AF8C1A657CC300DF1FCE /* thumb25.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C9AF8B1A657CC300DF1FCE /* thumb25.png */; };
 		77D2A9471A6ECC040081D2F9 /* VSLyricsDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D2A9461A6ECC040081D2F9 /* VSLyricsDownloader.m */; };
+		77E2241D1A742DF4001A156D /* VSImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E2241C1A742DF4001A156D /* VSImages.xcassets */; };
 		77E7033F1A66C64900E7FF04 /* PlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E7033E1A66C64900E7FF04 /* PlayController.m */; };
 		77E741031A728B6A005CF2D6 /* NSMutableArray+shuffle.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E741021A728B6A005CF2D6 /* NSMutableArray+shuffle.m */; };
 		B92B27308E685EC2D9F21AFD /* libPods-VK simple client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE1A0C6F6DBB0F2702BC870 /* libPods-VK simple client.a */; };
@@ -109,6 +110,7 @@
 		77C9AF8B1A657CC300DF1FCE /* thumb25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb25.png; sourceTree = "<group>"; };
 		77D2A9451A6ECC040081D2F9 /* VSLyricsDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSLyricsDownloader.h; sourceTree = "<group>"; };
 		77D2A9461A6ECC040081D2F9 /* VSLyricsDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSLyricsDownloader.m; sourceTree = "<group>"; };
+		77E2241C1A742DF4001A156D /* VSImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = VSImages.xcassets; sourceTree = "<group>"; };
 		77E7033D1A66C64900E7FF04 /* PlayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayController.h; sourceTree = "<group>"; };
 		77E7033E1A66C64900E7FF04 /* PlayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayController.m; sourceTree = "<group>"; };
 		77E741011A728B6A005CF2D6 /* NSMutableArray+shuffle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+shuffle.h"; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				778010281A61FA4E00125940 /* ViewControllers */,
 				77C9AF8A1A6570C800DF1FCE /* View */,
 				77B376DD1A5C117D00BC964E /* images.xcassets */,
+				77E2241C1A742DF4001A156D /* VSImages.xcassets */,
 				7780100B1A6019AB00125940 /* Main.storyboard */,
 				77B376DF1A5C117D00BC964E /* LaunchScreen.xib */,
 				77CE20AD1A6C919200FC079D /* VSLyrics */,
@@ -392,6 +395,7 @@
 				77BFB7A81A687CD70000E0BD /* volumeMin.png in Resources */,
 				77BFB7AB1A687D780000E0BD /* volumeMax@2x.png in Resources */,
 				77112A571A72EA2400DAAF74 /* iphone 6@3x.png in Resources */,
+				77E2241D1A742DF4001A156D /* VSImages.xcassets in Resources */,
 				771E00841A7140A40025202C /* minTrackImageVolume@3x.png in Resources */,
 				771E008A1A7140F30025202C /* maxTrackImageVolume@3x.png in Resources */,
 				771E00891A7140F30025202C /* maxTrackImageVolume@2x.png in Resources */,
