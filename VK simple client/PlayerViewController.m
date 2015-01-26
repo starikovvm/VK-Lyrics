@@ -49,6 +49,10 @@ static BOOL isPlaying;
     self.lyricsView.textColor = [UIColor colorWithWhite:0.325 alpha:1.000];
     self.lyricsView.delegate = self;
     
+    UIBarButtonItem* playListButton = [[UIBarButtonItem alloc] initWithTitle:@"Плейлист" style:UIBarButtonItemStylePlain target:self action:@selector(goToPlaylist)];
+    
+    self.navigationItem.rightBarButtonItem = playListButton;
+    
     [self updateLabels];
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:0.2
@@ -64,6 +68,7 @@ static BOOL isPlaying;
 {
     [super viewDidAppear:animated];
     [[Playlist sharedInstance] addObserver:self forKeyPath:@"currentTrackNumber" options:NSKeyValueObservingOptionNew context:nil];
+    [self updateLabels];
 //    [self becomeFirstResponder];
 }
 
@@ -268,6 +273,10 @@ static BOOL isPlaying;
 - (IBAction)setCurrentTime:(id)scrubber {
     [[AFSoundManager sharedManager]moveToSection:self.seekSlider.value];
     self.scrubbing = FALSE;
+}
+
+-(void)goToPlaylist{
+    [self performSegueWithIdentifier:@"toPlaylistSegue" sender:self];
 }
 
 @end

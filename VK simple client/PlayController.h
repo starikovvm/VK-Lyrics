@@ -31,7 +31,6 @@
 -(NSTimeInterval)availableDuration;
 -(NSTimeInterval)currentTime;
 
-
 @property NSTimer* timer;
 @property (strong,nonatomic) NSDictionary* currentPlayingInfo;
 @property (nonatomic) BOOL repeatEnabled;

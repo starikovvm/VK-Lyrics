@@ -37,7 +37,8 @@
 		77BFB7A81A687CD70000E0BD /* volumeMin.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFB7A61A687CD70000E0BD /* volumeMin.png */; };
 		77BFB7AB1A687D780000E0BD /* volumeMax@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFB7A91A687D780000E0BD /* volumeMax@2x.png */; };
 		77BFB7AC1A687D780000E0BD /* volumeMin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFB7AA1A687D780000E0BD /* volumeMin@2x.png */; };
-		77C2CAAB1A743C4500B21789 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77C2CAAA1A743C4500B21789 /* Crashlytics.framework */; };
+		77C2CAAE1A768F6C00B21789 /* PlayListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C2CAAD1A768F6C00B21789 /* PlayListTableViewController.m */; };
+		77C2CAB01A76964800B21789 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77C2CAAF1A76964800B21789 /* Crashlytics.framework */; };
 		77C9AF891A6570B500DF1FCE /* SongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C9AF881A6570B500DF1FCE /* SongCell.m */; };
 		77C9AF8C1A657CC300DF1FCE /* thumb25.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C9AF8B1A657CC300DF1FCE /* thumb25.png */; };
 		77D2A9471A6ECC040081D2F9 /* VSLyricsDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D2A9461A6ECC040081D2F9 /* VSLyricsDownloader.m */; };
@@ -106,7 +107,10 @@
 		77BFB7A61A687CD70000E0BD /* volumeMin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volumeMin.png; sourceTree = "<group>"; };
 		77BFB7A91A687D780000E0BD /* volumeMax@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volumeMax@2x.png"; sourceTree = "<group>"; };
 		77BFB7AA1A687D780000E0BD /* volumeMin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volumeMin@2x.png"; sourceTree = "<group>"; };
-		77C2CAAA1A743C4500B21789 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		77C2CAAA1A743C4500B21789 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = "VK simple client/Crashlytics.framework"; sourceTree = "<group>"; };
+		77C2CAAC1A768F6C00B21789 /* PlayListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayListTableViewController.h; sourceTree = "<group>"; };
+		77C2CAAD1A768F6C00B21789 /* PlayListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayListTableViewController.m; sourceTree = "<group>"; };
+		77C2CAAF1A76964800B21789 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		77C9AF871A6570B500DF1FCE /* SongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongCell.h; sourceTree = "<group>"; };
 		77C9AF881A6570B500DF1FCE /* SongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongCell.m; sourceTree = "<group>"; };
 		77C9AF8B1A657CC300DF1FCE /* thumb25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb25.png; sourceTree = "<group>"; };
@@ -127,7 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77C2CAAB1A743C4500B21789 /* Crashlytics.framework in Frameworks */,
+				77C2CAB01A76964800B21789 /* Crashlytics.framework in Frameworks */,
 				B92B27308E685EC2D9F21AFD /* libPods-VK simple client.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,6 +168,8 @@
 				77B336EF1A6001FF0047BA8C /* MyMusicTableViewController.m */,
 				77B377061A5D2DA600BC964E /* PlayerViewController.h */,
 				77B377071A5D2DA600BC964E /* PlayerViewController.m */,
+				77C2CAAC1A768F6C00B21789 /* PlayListTableViewController.h */,
+				77C2CAAD1A768F6C00B21789 /* PlayListTableViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -191,7 +197,6 @@
 		77B376CC1A5C117D00BC964E /* VK simple client */ = {
 			isa = PBXGroup;
 			children = (
-				77C2CAAA1A743C4500B21789 /* Crashlytics.framework */,
 				77B376D11A5C117D00BC964E /* AppDelegate.h */,
 				77B376D21A5C117D00BC964E /* AppDelegate.m */,
 				77E2241B1A74287E001A156D /* Classes */,
@@ -292,6 +297,8 @@
 		809E9EC39496E3078131E5C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				77C2CAAF1A76964800B21789 /* Crashlytics.framework */,
+				77C2CAAA1A743C4500B21789 /* Crashlytics.framework */,
 				FAE1A0C6F6DBB0F2702BC870 /* libPods-VK simple client.a */,
 				6C8BAA474C03AFA540EDF871 /* libPods-VK simple clientTests.a */,
 			);
@@ -509,6 +516,7 @@
 				77B376D31A5C117D00BC964E /* AppDelegate.m in Sources */,
 				77B59AE91A6485B7000FA0E8 /* Playlist.m in Sources */,
 				77B377081A5D2DA600BC964E /* PlayerViewController.m in Sources */,
+				77C2CAAE1A768F6C00B21789 /* PlayListTableViewController.m in Sources */,
 				778010251A61F91E00125940 /* Song.m in Sources */,
 				77B376D01A5C117D00BC964E /* main.m in Sources */,
 			);
@@ -640,6 +648,7 @@
 					"$(PROJECT_DIR)/VK",
 					simple,
 					client,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "VK simple client/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -660,6 +669,7 @@
 					"$(PROJECT_DIR)/VK",
 					simple,
 					client,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "VK simple client/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
