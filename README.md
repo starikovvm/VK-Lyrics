@@ -10,4 +10,4 @@ vk.com music player with LRC provided by [geci.me](http://api.geci.me/en/latest/
 
 ### Screenshots
 ![Screenshot]
-(https://www.dropbox.com/s/igkgadmsn3lq15i/screenshot.png?dl=1 =240x)
+(https://www.dropbox.com/s/igkgadmsn3lq15i/screenshot.png?dl=1)
