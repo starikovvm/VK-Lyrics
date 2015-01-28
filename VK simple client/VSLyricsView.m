@@ -11,6 +11,7 @@
 @interface VSLyricsView ()
 
 @property NSTimer* timer;
+@property unsigned long currentString;
 
 @end
 
@@ -56,14 +57,8 @@
         _textView.font = [UIFont fontWithName:@"Helvetica Neue" size:14.0];
     if (_textColor)
         _textView.textColor = [UIColor colorWithWhite:0.427 alpha:1.000];
-    
-    _textLabel = [[UILabel alloc] initWithFrame:self.bounds];
-    _textLabel.text = @"";
-    _textLabel.numberOfLines = 0;
-    _textLabel.textAlignment = NSTextAlignmentCenter;
-    _textLabel.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
 
-    
+    _currentString = 0;
     [self addSubview:_textView];
     
     [VSLyricsDownloader sharedInstance].delegate = self;
@@ -88,25 +83,28 @@
 
 -(void)setLRCTextColor:(UIColor *)LRCTextColor{
     _LRCTextColor = LRCTextColor;
-    _textLabel.textColor = LRCTextColor;
+    _textView.textColor = LRCTextColor;
 }
 
 -(void)setLRCTextFont:(UIFont *)LRCTextFont{
     _LRCTextFont = LRCTextFont;
-    _textLabel.font = LRCTextFont;
+    _textView.font = LRCTextFont;
 }
 
 -(void)updateTextForTime:(NSTimeInterval)time{
     if (_LRCArray) {
         if (_LRCArray.count >1) {
-            for (unsigned long i = 0;i<_LRCArray.count - 2;i++) {
+            for (unsigned long i = self.currentString;i<_LRCArray.count - 2;i++) {
                 NSTimeInterval currentStringTime =[_LRCArray[i][0] doubleValue];
                 NSTimeInterval nextStringTime = [_LRCArray[i+1][0] doubleValue];
                 if (currentStringTime <= time+0.5 && nextStringTime > time+0.5) {
-                    _textLabel.text = _LRCArray[i][1];
-                    _textLabel.frame = self.bounds;
-                    [_textLabel sizeToFit];
-                    _textLabel.frame = CGRectMake(self.bounds.size.width/2-_textLabel.bounds.size.width/2, self.bounds.size.height/2-_textLabel.bounds.size.height/2, _textLabel.bounds.size.width, _textLabel.bounds.size.height);
+                    if (_currentString != i) {
+                        _currentString = i;
+                        _textView.text = _LRCArray[i][1];
+                        _textView.frame = self.bounds;
+                        [_textView sizeToFit];
+                        _textView.frame = CGRectMake(self.bounds.size.width/2-_textView.bounds.size.width/2, self.bounds.size.height/2-_textView.bounds.size.height/2, _textView.bounds.size.width, _textView.bounds.size.height);
+                    }
                     return;
                 }
             }
@@ -137,20 +135,17 @@
 
 -(void)didRecieveLRC:(NSArray *)lyricsArray
 {
+    NSLog(@"Loaded LRC");
+    _currentString = 0;
     [self startTimer];
     dispatch_async(dispatch_get_main_queue(), ^{
-        [_textView removeFromSuperview];
         _LRCArray = lyricsArray;
-        [self addSubview:_textLabel];
-        
     });
 }
 -(void)didRecievePlainTextLyrics:(NSString *)lyrics
 {
     [self stopTimer];
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self addSubview:_textView];
-        [_textLabel removeFromSuperview];
         _LRCArray = nil;
         _textView.text = lyrics;
         _textView.scrollEnabled = YES;
@@ -161,8 +156,6 @@
 {
     [self stopTimer];
     dispatch_async(dispatch_get_main_queue(), ^{
-        [_textView removeFromSuperview];
-        [_textLabel removeFromSuperview];
         _LRCArray = nil;
         _textView.text = @"";
         _textView.scrollEnabled = NO;

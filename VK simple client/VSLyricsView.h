@@ -21,7 +21,6 @@
 -(void)getLyricsForTitle:(NSString*)title artist:(NSString*)artist;
 
 @property (weak, nonatomic) id<VSLyricsViewDelegate> delegate;
-@property (strong, nonatomic) UILabel* textLabel;
 @property (strong, nonatomic) UITextView* textView;
 @property (strong, nonatomic) UIFont* font;
 @property (strong, nonatomic) UIFont* LRCTextFont;
