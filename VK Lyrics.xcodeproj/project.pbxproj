@@ -45,8 +45,8 @@
 		77E2241D1A742DF4001A156D /* VSImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E2241C1A742DF4001A156D /* VSImages.xcassets */; };
 		77E7033F1A66C64900E7FF04 /* PlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E7033E1A66C64900E7FF04 /* PlayController.m */; };
 		77E741031A728B6A005CF2D6 /* NSMutableArray+shuffle.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E741021A728B6A005CF2D6 /* NSMutableArray+shuffle.m */; };
-		B92B27308E685EC2D9F21AFD /* libPods-VK simple client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE1A0C6F6DBB0F2702BC870 /* libPods-VK simple client.a */; };
-		BD6ED9CADD31FB5B21355E76 /* libPods-VK simple clientTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8BAA474C03AFA540EDF871 /* libPods-VK simple clientTests.a */; };
+		9AC247A397F30F419B034467 /* libPods-VK Lyrics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE62E595AEED7E9BDF81107 /* libPods-VK Lyrics.a */; };
+		BD6ED9CADD31FB5B21355E76 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		F09FAB0A6CD9980FA2B48953 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
@@ -61,9 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5084D58E8F86C7C45CC0433F /* Pods-VK simple client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VK simple client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VK simple client/Pods-VK simple client.debug.xcconfig"; sourceTree = "<group>"; };
-		51CAF3541C8B140D7799B565 /* Pods-VK simple clientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VK simple clientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VK simple clientTests/Pods-VK simple clientTests.debug.xcconfig"; sourceTree = "<group>"; };
-		6C8BAA474C03AFA540EDF871 /* libPods-VK simple clientTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VK simple clientTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AE62E595AEED7E9BDF81107 /* libPods-VK Lyrics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VK Lyrics.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		770325151A6F37CC00A1C0AE /* VSLyricsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSLyricsView.h; sourceTree = "<group>"; };
 		770325161A6F37CC00A1C0AE /* VSLyricsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSLyricsView.m; sourceTree = "<group>"; };
 		7703251D1A70799100A1C0AE /* transparentTrackImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparentTrackImage.png; sourceTree = "<group>"; };
@@ -121,9 +119,8 @@
 		77E7033E1A66C64900E7FF04 /* PlayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayController.m; sourceTree = "<group>"; };
 		77E741011A728B6A005CF2D6 /* NSMutableArray+shuffle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+shuffle.h"; sourceTree = "<group>"; };
 		77E741021A728B6A005CF2D6 /* NSMutableArray+shuffle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+shuffle.m"; sourceTree = "<group>"; };
-		DD23E136273EC6945DAF305B /* Pods-VK simple clientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VK simple clientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VK simple clientTests/Pods-VK simple clientTests.release.xcconfig"; sourceTree = "<group>"; };
-		E43122B1CBBF95451584820F /* Pods-VK simple client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VK simple client.release.xcconfig"; path = "Pods/Target Support Files/Pods-VK simple client/Pods-VK simple client.release.xcconfig"; sourceTree = "<group>"; };
-		FAE1A0C6F6DBB0F2702BC870 /* libPods-VK simple client.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VK simple client.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0FE120A2C6F478B9D3C4013 /* Pods-VK Lyrics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VK Lyrics.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VK Lyrics/Pods-VK Lyrics.debug.xcconfig"; sourceTree = "<group>"; };
+		BB39FBCE9EFB4791BA44E3D6 /* Pods-VK Lyrics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VK Lyrics.release.xcconfig"; path = "Pods/Target Support Files/Pods-VK Lyrics/Pods-VK Lyrics.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77C2CAB01A76964800B21789 /* Crashlytics.framework in Frameworks */,
-				B92B27308E685EC2D9F21AFD /* libPods-VK simple client.a in Frameworks */,
+				9AC247A397F30F419B034467 /* libPods-VK Lyrics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,24 +138,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F09FAB0A6CD9980FA2B48953 /* (null) in Frameworks */,
-				BD6ED9CADD31FB5B21355E76 /* libPods-VK simple clientTests.a in Frameworks */,
+				BD6ED9CADD31FB5B21355E76 /* (null) in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		11402A6B82401DEA5851EFEA /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				5084D58E8F86C7C45CC0433F /* Pods-VK simple client.debug.xcconfig */,
-				E43122B1CBBF95451584820F /* Pods-VK simple client.release.xcconfig */,
-				51CAF3541C8B140D7799B565 /* Pods-VK simple clientTests.debug.xcconfig */,
-				DD23E136273EC6945DAF305B /* Pods-VK simple clientTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		778010281A61FA4E00125940 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,7 +167,7 @@
 				77B376E91A5C117D00BC964E /* VK simple clientTests */,
 				77B376CB1A5C117D00BC964E /* Products */,
 				809E9EC39496E3078131E5C5 /* Frameworks */,
-				11402A6B82401DEA5851EFEA /* Pods */,
+				FA25D669E9B1D458974FD0B6 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -299,10 +285,18 @@
 			children = (
 				77C2CAAF1A76964800B21789 /* Crashlytics.framework */,
 				77C2CAAA1A743C4500B21789 /* Crashlytics.framework */,
-				FAE1A0C6F6DBB0F2702BC870 /* libPods-VK simple client.a */,
-				6C8BAA474C03AFA540EDF871 /* libPods-VK simple clientTests.a */,
+				6AE62E595AEED7E9BDF81107 /* libPods-VK Lyrics.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA25D669E9B1D458974FD0B6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B0FE120A2C6F478B9D3C4013 /* Pods-VK Lyrics.debug.xcconfig */,
+				BB39FBCE9EFB4791BA44E3D6 /* Pods-VK Lyrics.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,12 +306,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 77B376F01A5C117D00BC964E /* Build configuration list for PBXNativeTarget "VK Lyrics" */;
 			buildPhases = (
-				6E982E75D50CAC6019001848 /* Check Pods Manifest.lock */,
+				2A81C7C1FE79DAE5B7878927 /* Check Pods Manifest.lock */,
 				77B376C61A5C117D00BC964E /* Sources */,
 				77B376C71A5C117D00BC964E /* Frameworks */,
 				77B376C81A5C117D00BC964E /* Resources */,
-				7E510125E3A4A4C120A83208 /* Copy Pods Resources */,
 				50524F424C454D533F /* ShellScript */,
+				8795F7C4FC163529E3C3ECC3 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -332,11 +326,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 77B376F31A5C117D00BC964E /* Build configuration list for PBXNativeTarget "VK LyricsTests" */;
 			buildPhases = (
-				A49C5C81AE982D9B4B4E2494 /* Check Pods Manifest.lock */,
 				77B376E21A5C117D00BC964E /* Sources */,
 				77B376E31A5C117D00BC964E /* Frameworks */,
 				77B376E41A5C117D00BC964E /* Resources */,
-				A9A45F370B3F729BBD4B2A2D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -425,6 +417,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2A81C7C1FE79DAE5B7878927 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		50524F424C454D533F /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -438,22 +445,7 @@
 			shellPath = /bin/sh;
 			shellScript = "export CODESIGN_ALLOCATE=/Library/JailCoder/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ]; then\n/Library/JailCoder/Entitlements/Entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi\n./Crashlytics.framework/run de3a472a3e1d4921d7bbcbb65a3aa9e8ed8b18e0 d719f1ae14cd50ed0d039ea7aad181d0a1bdeeb97bc612f64fdb70d869bc9a77";
 		};
-		6E982E75D50CAC6019001848 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		7E510125E3A4A4C120A83208 /* Copy Pods Resources */ = {
+		8795F7C4FC163529E3C3ECC3 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -465,37 +457,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VK simple client/Pods-VK simple client-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A49C5C81AE982D9B4B4E2494 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		A9A45F370B3F729BBD4B2A2D /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VK simple clientTests/Pods-VK simple clientTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VK Lyrics/Pods-VK Lyrics-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -638,16 +600,13 @@
 		};
 		77B376F11A5C117D00BC964E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5084D58E8F86C7C45CC0433F /* Pods-VK simple client.debug.xcconfig */;
+			baseConfigurationReference = B0FE120A2C6F478B9D3C4013 /* Pods-VK Lyrics.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				EXECUTABLE_PREFIX = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/VK",
-					simple,
-					client,
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "VK simple client/Info.plist";
@@ -659,16 +618,13 @@
 		};
 		77B376F21A5C117D00BC964E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E43122B1CBBF95451584820F /* Pods-VK simple client.release.xcconfig */;
+			baseConfigurationReference = BB39FBCE9EFB4791BA44E3D6 /* Pods-VK Lyrics.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				EXECUTABLE_PREFIX = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/VK",
-					simple,
-					client,
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "VK simple client/Info.plist";
@@ -680,19 +636,16 @@
 		};
 		77B376F41A5C117D00BC964E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 51CAF3541C8B140D7799B565 /* Pods-VK simple clientTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "VK simple clientTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "";
 				PRODUCT_NAME = "VK LyricsTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VK simple client.app/VK simple client";
 			};
@@ -700,15 +653,12 @@
 		};
 		77B376F51A5C117D00BC964E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD23E136273EC6945DAF305B /* Pods-VK simple clientTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "VK simple clientTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "";
 				PRODUCT_NAME = "VK LyricsTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VK simple client.app/VK simple client";
 			};

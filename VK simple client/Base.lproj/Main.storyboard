@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C106a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="T43-al-mvd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="T43-al-mvd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -122,7 +122,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Iw-tG-o04" userLabel="Title View">
-                                <rect key="frame" x="0.0" y="64.5" width="600" height="53.5"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="53.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhL-F4-1Nl">
                                         <rect key="frame" x="0.0" y="30" width="600" height="20.5"/>
@@ -152,8 +152,8 @@
                                     <constraint firstItem="3i6-DW-gO6" firstAttribute="top" secondItem="5Iw-tG-o04" secondAttribute="top" id="xHY-IJ-o89"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X9Y-ia-7d4" userLabel="Buttons View">
-                                <rect key="frame" x="0.0" y="413" width="600" height="59"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9Y-ia-7d4" userLabel="Buttons View">
+                                <rect key="frame" x="0.0" y="369" width="600" height="59"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yrI-1H-aMw">
                                         <rect key="frame" x="258" y="15" width="85" height="30"/>
@@ -204,8 +204,8 @@
                                     <constraint firstItem="cky-Ml-nbf" firstAttribute="top" secondItem="yrI-1H-aMw" secondAttribute="top" id="zqD-Pb-hN0"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SKM-ub-VdP" userLabel="Controls View">
-                                <rect key="frame" x="6" y="480" width="588" height="110"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SKM-ub-VdP" userLabel="Controls View">
+                                <rect key="frame" x="6" y="436" width="588" height="110"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99:59" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pre-Jr-zpT">
                                         <rect key="frame" x="548" y="4" width="40" height="21"/>
@@ -323,8 +323,8 @@
                                     <constraint firstItem="Chv-Xx-cbR" firstAttribute="top" secondItem="64h-1T-oic" secondAttribute="bottom" constant="2" id="xxC-R3-g7m"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gTI-re-o4n" userLabel="LyricsView" customClass="VSLyricsView">
-                                <rect key="frame" x="0.0" y="118" width="600" height="295"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTI-re-o4n" userLabel="LyricsView" customClass="VSLyricsView">
+                                <rect key="frame" x="0.0" y="118" width="600" height="251"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

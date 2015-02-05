@@ -54,7 +54,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [[PlayController sharedInstance] playTrack:indexPath.row];
+    [[PlayController sharedInstance] playTrack:(int)indexPath.row];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

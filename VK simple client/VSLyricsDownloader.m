@@ -7,7 +7,6 @@
 //
 
 #import "VSLyricsDownloader.h"
-#import "AFURLResponseSerialization.h"
 
 static BOOL foundLyricInURL;
 static NSString* tempLyrics;
