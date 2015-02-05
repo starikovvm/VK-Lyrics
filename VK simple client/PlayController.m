@@ -91,7 +91,9 @@
     if (self.shuffleEnabled) {
         [[Playlist sharedInstance] shuffleEnable];
     }
-    [self playTrack:trackNumber];
+    if (trackNumber < array.count) {
+        [self playTrack:trackNumber];
+    }
 }
 
 -(void)togglePlayPause

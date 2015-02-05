@@ -57,7 +57,7 @@ static NSMutableArray* shuffledArray;
 {
     if (self.array.count > 0) {
         Song* currentSong = [self currentSong];
-        NSMutableArray* bufArray = self.array;
+        NSMutableArray* bufArray = [self.array copy];
         shuffledArray = [NSMutableArray arrayWithArray:self.array];
         [bufArray shuffle];
         self.array = [NSMutableArray arrayWithArray:bufArray];
