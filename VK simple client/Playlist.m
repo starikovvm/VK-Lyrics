@@ -9,9 +9,10 @@
 #import "Playlist.h"
 #import "NSMutableArray+shuffle.h"
 
-static NSMutableArray* shuffledArray;
 
 @implementation Playlist
+
+NSMutableArray* shuffledArray;
 
 + (Playlist *)sharedInstance
 {
@@ -57,9 +58,12 @@ static NSMutableArray* shuffledArray;
 {
     if (self.array.count > 0) {
         Song* currentSong = [self currentSong];
-        NSMutableArray* bufArray = [self.array copy];
+        NSMutableArray* bufArray = [self.array mutableCopy];
         shuffledArray = [NSMutableArray arrayWithArray:self.array];
-        [bufArray shuffle];
+        if ([bufArray respondsToSelector:@selector(shuffle)])
+            [bufArray shuffle];
+        else
+            NSLog(@"shuffle doesn't work");
         self.array = [NSMutableArray arrayWithArray:bufArray];
         [self.array exchangeObjectAtIndex:0 withObjectAtIndex:[self.array indexOfObject:currentSong]];
         self.currentTrackNumber = 0;
