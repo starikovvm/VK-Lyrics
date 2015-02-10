@@ -139,6 +139,12 @@
     _currentString = 0;
     [self startTimer];
     dispatch_async(dispatch_get_main_queue(), ^{
+        if (self.LRCTextColor) {
+            _textView.textColor = _LRCTextColor;
+        }
+        if (self.LRCTextFont) {
+            _textView.font = _LRCTextFont;
+        }
         _LRCArray = lyricsArray;
     });
 }
@@ -146,6 +152,14 @@
 {
     [self stopTimer];
     dispatch_async(dispatch_get_main_queue(), ^{
+        
+        if (self.textColor) {
+            _textView.textColor = _textColor;
+        }
+        if (self.LRCTextFont) {
+            _textView.font = _font;
+        }
+        
         _LRCArray = nil;
         _textView.text = lyrics;
         _textView.scrollEnabled = YES;
